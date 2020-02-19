@@ -3,7 +3,7 @@ import resolve from "rollup-plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 
 module.exports = {
-    input: "./service-worker.js",
+    input: "./tmp/service-worker.js",
     output: {
         dir: "./public",
         format: "esm"
