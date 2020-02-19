@@ -1,4 +1,3 @@
-import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
@@ -14,10 +13,9 @@ module.exports = {
     },
     plugins: [
         replace({
-            "process.env.NODE_ENV": JSON.stringify("production"),
+            "process.env.NODE_ENV": JSON.stringify("production")
         }),
         resolve({ dedupe: ["lit-element", "lit-html"] }),
-        commonjs(),
         typescript(),
         minifyHTML(),
         terser()
