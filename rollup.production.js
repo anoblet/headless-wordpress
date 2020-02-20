@@ -18,6 +18,10 @@ module.exports = {
         resolve({ dedupe: ["lit-element", "lit-html"] }),
         typescript(),
         minifyHTML(),
-        terser()
+        terser({
+            output: {
+                comments: false
+            }
+        })
     ]
 };
