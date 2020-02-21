@@ -3,6 +3,7 @@ import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
 import minifyHTML from "rollup-plugin-minify-html-literals";
 import { terser } from "rollup-plugin-terser";
+import size from "rollup-plugin-size";
 
 module.exports = {
     input: "./src/index.ts",
@@ -22,6 +23,7 @@ module.exports = {
             output: {
                 comments: false
             }
-        })
+        }),
+        size()
     ]
 };
