@@ -4,11 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "rimraf public/scripts && rollup -c rollup.production.js",
-        "build:watch": "rollup -c rollup.development.js -w",
+        "build": "rimraf public/scripts && rollup -c etc/rollup.production.js",
+        "build:watch": "rollup -c etc/rollup.development.js -w",
         "commit": "git-cz",
         "dev": "npm-run-all -p build:watch start",
-        "service-worker": "node workbox-build.js && rollup -c rollup.service-worker.js && rimraf tmp",
+        "service-worker": "node workbox-build.js && rollup -c etc/rollup.service-worker.js && rimraf tmp",
         "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
