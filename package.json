@@ -11,8 +11,9 @@
         "build:typescript:watch": "tsc --build tsconfig.json -w",
         "build:watch": "npm-run-all -p build:typescript:watch build:rollup:watch",
         "commit": "git-cz",
+        "save": "git add . && git commit -m \"chore(package): save\"",
         "service-worker": "node bin/workbox-build.js && rollup -c etc/rollup.service-worker.js && rimraf tmp",
-        "server": "node bin/server.js",
+        "server": "wds --app-index public/index.html --open --root-dir public --watch",
         "start": "npm-run-all -p build:watch server",
         "start:production": "npm run build && npm run server",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +32,7 @@
         "@rollup/plugin-node-resolve": "^7.1.1",
         "@rollup/plugin-replace": "^2.3.1",
         "@rollup/plugin-typescript": "^3.0.0",
+        "@web/dev-server": "^0.1.2",
         "browser-sync": "^2.26.7",
         "commitizen": "^4.0.3",
         "compression": "^1.7.4",
