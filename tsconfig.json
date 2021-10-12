@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
+        "allowJs": true,
         "experimentalDecorators": true,
         "lib": ["es2017", "dom"],
         "module": "esnext",
         "moduleResolution": "node",
         "target": "es2017",
         "outDir": ".tsc"
-    }
+    },
+    "include": ["src/**/*.js", "src/**/*.ts"]
 }

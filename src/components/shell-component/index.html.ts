@@ -1,5 +1,6 @@
 import { html } from "lit-element";
+import "../cxl-dashboard/Views/Dashboard/cxl-dashboard";
 
 export default function () {
-    return html`web-starter-kit`;
+    return html` <cxl-dashboard></cxl-dashboard> `;
 }

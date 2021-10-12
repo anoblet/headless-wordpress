@@ -1,4 +1,7 @@
+import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
+import nodePolyfills from "rollup-plugin-polyfill-node";
 
 module.exports = {
     input: ".tsc/index.js",
@@ -6,5 +9,10 @@ module.exports = {
         dir: "./public/js",
         format: "esm",
     },
-    plugins: [resolve({ dedupe: ["lit-element", "lit-html"] })],
+    plugins: [
+        resolve({ browser: true, dedupe: ["lit-element", "lit-html"] }),
+        commonjs(),
+        json(),
+        nodePolyfills(),
+    ],
 };

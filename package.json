@@ -29,9 +29,10 @@
     },
     "homepage": "https://github.com/anoblet/web-starter-kit#readme",
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^21.0.0",
+        "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-node-resolve": "^7.1.1",
         "@rollup/plugin-replace": "^2.3.1",
-        "@rollup/plugin-typescript": "^3.0.0",
         "@web/dev-server": "^0.1.2",
         "browser-sync": "^2.26.7",
         "commitizen": "^4.0.3",
@@ -43,9 +44,10 @@
         "npm-run-all": "^4.1.5",
         "prettier": "^2.1.2",
         "rimraf": "^3.0.2",
-        "rollup": "^1.31.1",
+        "rollup": "^2.58.0",
         "rollup-plugin-minify-html-literals": "^1.2.3",
         "rollup-plugin-node-globals": "^1.4.0",
+        "rollup-plugin-polyfill-node": "^0.7.0",
         "rollup-plugin-size": "^0.2.2",
         "rollup-plugin-terser": "^5.2.0",
         "typescript": "^4.0.3",
@@ -57,6 +59,17 @@
         }
     },
     "dependencies": {
+        "@vaadin/router": "^1.7.4",
+        "@vaadin/vaadin-app-layout": "^20.0.5",
+        "@vaadin/vaadin-dialog": "^20.0.5",
+        "@vaadin/vaadin-form-layout": "^20.0.5",
+        "@vaadin/vaadin-grid": "^20.0.5",
+        "@vaadin/vaadin-notification": "^20.0.5",
+        "@vaadin/vaadin-split-layout": "^20.0.5",
+        "@vaadin/vaadin-tabs": "^20.0.5",
+        "@woocommerce/woocommerce-rest-api": "^1.0.1",
+        "lit-element": "^3.0.1",
+        "object-path": "^0.11.8",
         "workbox-window": "^5.0.0"
     },
     "husky": {
