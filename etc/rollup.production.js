@@ -18,10 +18,11 @@ module.exports = {
         json(),
         nodePolyfills(),
         replace({
+            preventAssignment: true,
             "process.env.NODE_ENV": JSON.stringify("production"),
         }),
         resolve({ browser: true, dedupe: ["lit-element", "lit-html"] }),
-        minifyHTML(),
+        // minifyHTML(),
         terser({
             output: {
                 comments: false,
