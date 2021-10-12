@@ -20,7 +20,7 @@ module.exports = {
         replace({
             "process.env.NODE_ENV": JSON.stringify("production"),
         }),
-        resolve({ dedupe: ["lit-element", "lit-html"] }),
+        resolve({ browser: true, dedupe: ["lit-element", "lit-html"] }),
         minifyHTML(),
         terser({
             output: {
