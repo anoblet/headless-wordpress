@@ -17,16 +17,16 @@ module.exports = {
         commonjs(),
         json(),
         nodePolyfills(),
-        replace({
-            preventAssignment: true,
-            "process.env.NODE_ENV": JSON.stringify("production"),
-        }),
+        // replace({
+        // preventAssignment: true,
+        // "process.env.NODE_ENV": JSON.stringify("production"),
+        // }),
         resolve({ browser: true, dedupe: ["lit-element", "lit-html"] }),
         // minifyHTML(),
-        terser({
-            output: {
-                comments: false,
-            },
-        }),
+        // terser({
+        //     output: {
+        //         comments: false,
+        //     },
+        // }),
     ],
 };
