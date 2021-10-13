@@ -61,7 +61,7 @@
     "dependencies": {
         "@vaadin/router": "^1.7.4",
         "@vaadin/vaadin-app-layout": "^20.0.5",
-        "@vaadin/vaadin-combo-box": "^21.0.3",
+        "@vaadin/vaadin-combo-box": "^20.0.5",
         "@vaadin/vaadin-dialog": "^20.0.5",
         "@vaadin/vaadin-form-layout": "^20.0.5",
         "@vaadin/vaadin-grid": "^20.0.5",
