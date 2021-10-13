@@ -1,3 +1,23 @@
+import "./Views/Customer/cxl-customer-details";
+import "./Views/Customer/cxl-customer-grid";
+import "./Views/Customer/cxl-customer-view";
+
+import "./Views/Membership/cxl-membership-grid";
+import "./Views/Membership/cxl-membership-view";
+
+import "./Views/Order/cxl-order-details";
+import "./Views/Order/cxl-order-grid";
+import "./Views/Order/cxl-order-view";
+
+import "./Views/Refund/cxl-refund-create";
+import "./Views/Refund/cxl-refund-grid";
+import "./Views/Refund/cxl-refund-view";
+
+import "./Views/Subscription/cxl-subscription-coupon";
+import "./Views/Subscription/cxl-subscription-grid";
+import "./Views/Subscription/cxl-subscription-switch";
+import "./Views/Subscription/cxl-subscription-view";
+
 export const routes = [
     { path: "/", component: "cxl-customer-grid" },
     { path: "/iframe.html", component: "cxl-customer-grid" },
