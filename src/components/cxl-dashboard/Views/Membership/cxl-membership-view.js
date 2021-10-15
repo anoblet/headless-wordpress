@@ -1,14 +1,13 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
 import { css, customElement, html } from "lit-element";
-import { nothing } from "lit-html";
-import { Membership } from "../../Models/Membership";
 import { ViewElement } from "../../BaseElements/ViewElement";
-
-const formatDate = (date) => (date ? date.toLocaleString() : nothing);
+import { Membership } from "../../Models/Membership";
 
 @customElement("cxl-membership-view")
 export class CXLMembershipViewElement extends ViewElement {
+    _itemType = Membership;
+
     static get styles() {
         return [
             super.styles,
@@ -21,33 +20,34 @@ export class CXLMembershipViewElement extends ViewElement {
     }
 
     render() {
+        console.log(this.item);
         return html`
             <vaadin-form-layout>
                 <vaadin-form-item>
                     <span slot="label">ID</span>
-                    ${this.item.id}
+                    ${this.item?.id}
                 </vaadin-form-item>
                 <vaadin-form-item>
-                    <span slot="label">Plan name:</span>
-                    ${this.item.productName}
+                    <span slot="label">Product Name:</span>
+                    ${this.item?.productName}
                 </vaadin-form-item>
                 <vaadin-form-item class="capitalize">
                     <span slot="label">Status</span>
-                    ${this.item.status}
+                    ${this.item?.status}
                 </vaadin-form-item>
                 <vaadin-form-item>
-                    <span slot="label">Date created</span>
-                    ${formatDate(this.item.date_created)}
+                    <span slot="label">Date Created</span>
+                    ${this.item?.dateCreated}
                 </vaadin-form-item>
                 <vaadin-form-item>
-                    <span slot="label">Date modified</span>
-                    ${formatDate(this.item.date_modified)}
+                    <span slot="label">Start Date</span>
+                    ${this.item?.startDate}
+                </vaadin-form-item>
+                <vaadin-form-item>
+                    <span slot="label">End Date</span>
+                    ${this.item?.endDate}
                 </vaadin-form-item>
             </vaadin-form-layout>
         `;
-    }
-
-    async getItem() {
-        this.item = await new Membership(this.item).get();
     }
 }

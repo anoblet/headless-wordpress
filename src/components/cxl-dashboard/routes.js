@@ -38,6 +38,13 @@ export const routes = [
         ],
     },
     {
+        path: "/memberships/members",
+        children: [
+            { path: "/", component: "cxl-membership-grid" },
+            { path: "/:id", component: "cxl-membership-view" },
+        ],
+    },
+    {
         path: "/orders",
         children: [
             { path: "/", component: "cxl-order-grid" },
