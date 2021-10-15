@@ -16,7 +16,7 @@ export class Order extends BaseItemModel {
     }
 
     get currencySymbol() {
-        return this.currency_symbol;
+        return this._data.currency_symbol;
     }
 
     get customer() {
@@ -69,6 +69,10 @@ export class Order extends BaseItemModel {
 
     get total() {
         return this._data.total;
+    }
+
+    get totalFormatted() {
+        return `${this.currencySymbol}${this.total}`;
     }
 
     async getCoupons() {

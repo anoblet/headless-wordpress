@@ -48,11 +48,6 @@ export class CXLCustomerGridElement extends GridElement {
                 >
                 </vaadin-grid-filter-column>
                 <vaadin-grid-filter-column
-                    header="Team"
-                    resizable
-                    path="team"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
                     header="Customer Since"
                     resizable
                     path="customerSince"

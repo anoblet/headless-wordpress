@@ -12,40 +12,40 @@ export class CXLSubscriptionGridElement extends GridElement {
     render() {
         return html`
             <vaadin-grid .items=${this.items}>
-                <vaadin-grid-sort-column
+                <vaadin-grid-column
                     header="#"
                     path="id"
                     auto-width
                     flex-grow="0"
-                ></vaadin-grid-sort-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="Product Name"
                     path="productName"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-sort-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="Start Date"
                     path="startDate"
                     auto-width
                     flex-grow="0"
-                ></vaadin-grid-sort-column>
-                <vaadin-grid-sort-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="End Date"
                     path="endDate"
                     auto-width
                     flex-grow="0"
-                ></vaadin-grid-sort-column>
-                <vaadin-grid-sort-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="Total"
-                    path="total"
+                    path="totalFormatted"
                     auto-width
                     flex-grow="0"
-                ></vaadin-grid-sort-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="Status"
                     path="status"
                     auto-width
                     flex-grow="0"
-                ></vaadin-grid-filter-column>
+                ></vaadin-grid-column>
                 <vaadin-grid-column
                     .renderer=${this._boundActionColumnRenderer}
                     auto-width

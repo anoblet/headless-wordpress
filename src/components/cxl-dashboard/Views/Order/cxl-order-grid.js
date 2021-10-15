@@ -28,7 +28,7 @@ export class CXLOrderGridElement extends GridElement {
                     auto-width
                     flex-grow="0"
                     header="Total"
-                    path="total"
+                    path="totalFormatted"
                 ></vaadin-grid-column>
                 <vaadin-grid-column
                     auto-width
