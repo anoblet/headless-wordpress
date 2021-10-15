@@ -21,6 +21,10 @@ export class Subscription extends BaseItemModel {
         this._data.coupon_lines = value;
     }
 
+    get currency() {
+        return this._data.currency;
+    }
+
     get endDate() {
         return formatDate(this._data.start_date);
     }
@@ -43,6 +47,10 @@ export class Subscription extends BaseItemModel {
 
     get total() {
         return this._data.total;
+    }
+
+    get totalFormatted() {
+        return `${this.total} ${this.currency}`;
     }
 
     async put(data = this._data) {

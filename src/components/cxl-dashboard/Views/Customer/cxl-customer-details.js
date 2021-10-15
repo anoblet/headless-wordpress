@@ -1,11 +1,11 @@
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-text-field/vaadin-email-field";
-import { css, customElement, html, property, query } from "lit-element";
+import { css, customElement, html, query } from "lit-element";
 import { render } from "lit-html";
+import objectPath from "object-path";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import { Customer } from "../../Models/Customer";
 import { notify } from "../../utilities";
-import objectPath from "object-path";
 
 @customElement("cxl-customer-details")
 export class CXLCustomerDetailsElement extends ViewElement {
@@ -112,11 +112,11 @@ export class CXLCustomerDetailsElement extends ViewElement {
                         label="Subscriber since"
                         value=${this.item?.subscriberSince}
                     ></vaadin-text-field>
-                    <vaadin-text-field
+                    <!-- <vaadin-text-field
                         disabled
                         label="Team"
                         value=${this.item?.team}
-                    ></vaadin-text-field>
+                    ></vaadin-text-field> -->
                     <vaadin-text-field
                         disabled
                         label="Subscription"
