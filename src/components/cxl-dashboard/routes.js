@@ -59,6 +59,7 @@ export const routes = [
         children: [
             { path: "/:id", component: "cxl-subscription-view" },
             { path: "/:id/coupon", component: "cxl-subscription-coupon" },
+            { path: "/:id/switch", component: "cxl-subscription-switch" },
         ],
     },
     { path: "(.*)", component: "x-not-found-view" },

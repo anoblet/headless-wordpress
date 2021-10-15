@@ -16,15 +16,14 @@ export class CXLSubscriptionSwitchElement extends ViewElement {
     }
 
     render() {
-        console.log(this.item);
-
         return html`
             <vaadin-text-field
+                disabled
                 label="Current Product"
-                value="${this.item.productName}"
+                value="${this.item?.productName}"
             ></vaadin-text-field>
             <hr />
-            <vaadin-combo-box label="New Product"> </vaadin-combo-box>
+            <vaadin-combo-box label="New Product"></vaadin-combo-box>
             <hr />
             <vaadin-button @click="${this.onClick}">Cancel</vaadin-button>
             <vaadin-button @click="${this.onClick}">Confirm</vaadin-button>
@@ -32,6 +31,8 @@ export class CXLSubscriptionSwitchElement extends ViewElement {
     }
 
     firstUpdated() {
+        super.firstUpdated();
+
         this.getProducts();
     }
 
