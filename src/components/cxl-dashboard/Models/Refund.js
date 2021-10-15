@@ -13,8 +13,8 @@ export class Refund extends BaseItemModel {
         console.log(this);
 
         // Calculate if we can.
-        if (this.lineItems.length > 0) {
-            this._data.amount = this.lineItems.reduce((total, item) => {
+        if (this.lineItems?.length > 0) {
+            this._data.amount = this.lineItems?.reduce((total, item) => {
                 return total + Number(item.refund_total);
             }, 0);
         }

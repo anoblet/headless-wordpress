@@ -38,6 +38,10 @@ export class BaseElement extends LitElement {
         }
     }
 
+    _back() {
+        history.back();
+    }
+
     _createDialog({ renderer }) {
         const dialog = document.createElement("vaadin-dialog");
 

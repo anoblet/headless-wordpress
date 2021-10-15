@@ -109,7 +109,7 @@ export class CXLRefundCreateElement extends ViewElement {
                 ></vaadin-text-area>
                 <hr />
                 <div id="action" class="grid gap">
-                    <vaadin-button>Cancel</vaadin-button>
+                    <vaadin-button @click=${this._back}>Cancel</vaadin-button>
                     <vaadin-button @click=${this._save}>Save</vaadin-button>
                 </div>
             </div>
@@ -174,10 +174,11 @@ export class CXLRefundCreateElement extends ViewElement {
     _update(event) {
         console.log("item", this.item);
         console.log("event", event);
-        const lineItems = [...this.item.lineItems];
+        console.log(this.item?.order?.lineItems);
+        const lineItems = [...this.item?.order?.lineItems];
         if (!lineItems[event.target.dataset.index]) {
             lineItems[event.target.dataset.index] = {
-                id: this.item.order.lineItems[event.target.dataset.index].id,
+                id: this.item?.order?.lineItems[event.target.dataset.index].id,
             };
         }
 

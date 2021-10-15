@@ -31,6 +31,7 @@ export class CXLRefundViewElement extends ViewElement {
     }
 
     render() {
+        console.log(this.item);
         return html`
             <div id="grid">
                 <label>ID</label>
@@ -60,7 +61,7 @@ export class CXLRefundViewElement extends ViewElement {
     async getItem() {
         const item = await super.getItem();
 
-        // needs to be synchroneous becaust we get customer id from the order
+        // needs to be synchroneous because we get customer id from the order
         await item.getOrder();
         await item.getCustomer();
 
