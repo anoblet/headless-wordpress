@@ -27,10 +27,12 @@ export class CXLMembershipGridElement extends GridElement {
                     header="#"
                     path="id"
                 ></vaadin-grid-sort-column>
-                <vaadin-grid-filter-column header="Plan" path="plan_id">
-                </vaadin-grid-filter-column>
+                <vaadin-grid-filter-column
+                    header="Product Name"
+                    path="productName"
+                ></vaadin-grid-filter-column>
                 <vaadin-grid-sort-column
-                    header="Date created"
+                    header="Date Created"
                     path="dateCreated"
                     auto-width
                     flex-grow="0"
@@ -38,7 +40,7 @@ export class CXLMembershipGridElement extends GridElement {
                 >
                 </vaadin-grid-sort-column>
                 <vaadin-grid-sort-column
-                    header="Start date"
+                    header="Start Date"
                     path="startDate"
                     auto-width
                     flex-grow="0"
@@ -46,7 +48,7 @@ export class CXLMembershipGridElement extends GridElement {
                 >
                 </vaadin-grid-sort-column>
                 <vaadin-grid-sort-column
-                    header="End date"
+                    header="End Date"
                     path="endDate"
                     auto-width
                     flex-grow="0"
