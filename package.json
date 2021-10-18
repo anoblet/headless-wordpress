@@ -59,6 +59,7 @@
         }
     },
     "dependencies": {
+        "@adobe/lit-mobx": "^2.0.0",
         "@vaadin/router": "^1.7.4",
         "@vaadin/vaadin-app-layout": "^20.0.5",
         "@vaadin/vaadin-combo-box": "^20.0.5",
@@ -69,7 +70,9 @@
         "@vaadin/vaadin-split-layout": "^20.0.5",
         "@vaadin/vaadin-tabs": "^20.0.5",
         "@woocommerce/woocommerce-rest-api": "^1.0.1",
+        "lit": "^2.0.2",
         "lit-element": "^3.0.1",
+        "mobx": "^6.3.5",
         "object-path": "^0.11.8",
         "workbox-window": "^5.0.0"
     },

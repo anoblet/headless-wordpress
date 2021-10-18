@@ -22,6 +22,7 @@ export class CXLDashboardElement extends LitElement {
         return css`
             :host {
                 display: block;
+                font-family: var(--lumo-font-family);
                 height: 100vh;
             }
 

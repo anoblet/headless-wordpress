@@ -10,8 +10,6 @@ export class Refund extends BaseItemModel {
     }
 
     get amount() {
-        console.log(this);
-
         // Calculate if we can.
         if (this.lineItems?.length > 0) {
             this._data.amount = this.lineItems?.reduce((total, item) => {
@@ -24,6 +22,11 @@ export class Refund extends BaseItemModel {
 
     set amount(value) {
         this._data.amount = value;
+    }
+
+    get amountFormatted() {
+        console.log("amount", this);
+        return `${this.order?.currencySymbol}${this.amount}`;
     }
 
     get customer() {
