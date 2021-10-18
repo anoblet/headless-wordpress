@@ -14,10 +14,18 @@ export class CXLSubscriptionViewElement extends ViewElement {
                 :host {
                     display: grid;
                     grid-gap: 1rem;
+                    grid-template-rows: repeat(
+                        auto-fit,
+                        minmax(0, max-content)
+                    );
                 }
 
-                #fields {
+                .grid {
                     grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+                    grid-template-rows: repeat(
+                        auto-fit,
+                        minmax(0, max-content)
+                    );
                 }
             `,
         ];
@@ -52,18 +60,27 @@ export class CXLSubscriptionViewElement extends ViewElement {
                     label="End Date"
                     value="${this.item?.endDate}"
                 ></vaadin-text-field>
+                <vaadin-text-field
+                    disabled
+                    label="Coupon Code"
+                    value="${this.item?.couponLines?.[0].code}"
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    disabled
+                    label="Coupon Discount"
+                    value="${this.item?.couponLines?.[0].discount}"
+                ></vaadin-text-field>
             </div>
-            <vaadin-button
-                @click="${() =>
-                    navigate(`/subscriptions/${this.item?.id}/switch`)}"
-                >Switch Subscription</vaadin-button
-            >
             <div class="grid gap">
-                <h4>Current Coupon:</h4>
+                <vaadin-button
+                    @click="${() =>
+                        navigate(`/subscriptions/${this.item?.id}/switch`)}"
+                    >Switch Subscription
+                </vaadin-button>
                 <vaadin-button
                     @click=${() =>
                         navigate(`/subscriptions/${this.item?.id}/coupon`)}
-                    >Apply Coupon</vaadin-button
+                    >Update Coupon</vaadin-button
                 >
             </div>
         `;

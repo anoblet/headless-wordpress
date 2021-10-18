@@ -43,7 +43,11 @@ export class CXLDashboardElement extends LitElement {
                 <vaadin-drawer-toggle
                     slot="navbar [touch-optimized]"
                 ></vaadin-drawer-toggle>
-                <span slot="navbar">CXL Customer Service</span>
+                <span slot="navbar">
+                    <vaadin-tab>
+                        <a href="/">CXL Customer Service</a>
+                    </vaadin-tab>
+                </span>
                 <div
                     slot="drawer"
                     orientation="vertical"
@@ -55,10 +59,8 @@ export class CXLDashboardElement extends LitElement {
                         orientation="vertical"
                         @selected-changed=${this._selectedChanged.bind(this)}
                     >
-                        <vaadin-tab
-                            ><a href="/customers">Customers</a></vaadin-tab
-                        >
-                        <vaadin-tab><a href="/orders">Orders</a></vaadin-tab>
+                        <vaadin-tab><a href="/customers">Home</a></vaadin-tab>
+                        <!-- <vaadin-tab><a href="/orders">Orders</a></vaadin-tab>
                         <vaadin-tab
                             ><a href="/subscriptions"
                                 >Subscriptions</a
@@ -68,7 +70,10 @@ export class CXLDashboardElement extends LitElement {
                             ><a href="/memberships/members"
                                 >Memberships</a
                             ></vaadin-tab
-                        >
+                        > -->
+                        <vaadin-tab>
+                            <a href="/knowledge-base">Knowledge Base</a>
+                        </vaadin-tab>
                     </vaadin-tabs>
                 </div>
                 <main></main>

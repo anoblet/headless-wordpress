@@ -52,9 +52,9 @@ export class CXLSubscriptionCouponElement extends ViewElement {
         // Only one coupon should be able to applied at a time.
         // Technically we should be able to omit the coupon amount here, but discount_amount isn't populated.
         await this.item.put(
-            // { coupon_lines: [{ code: coupon.code }] } // 0
+            { coupon_lines: [{ code: coupon.code }] } // 0
             // { coupon_lines: [{ discount_amount: coupon.amount, code: coupon.code }] } // Correct
-            { coupon_lines: [] }
+            // { coupon_lines: [] }
         );
 
         console.log(this.item._lastResponse);
