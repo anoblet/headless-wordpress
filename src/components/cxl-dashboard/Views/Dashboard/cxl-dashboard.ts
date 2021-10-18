@@ -59,7 +59,9 @@ export class CXLDashboardElement extends LitElement {
                         orientation="vertical"
                         @selected-changed=${this._selectedChanged.bind(this)}
                     >
-                        <vaadin-tab><a href="/customers">Home</a></vaadin-tab>
+                        <vaadin-tab
+                            ><a href="/customers">Dashboard</a></vaadin-tab
+                        >
                         <!-- <vaadin-tab><a href="/orders">Orders</a></vaadin-tab>
                         <vaadin-tab
                             ><a href="/subscriptions"
