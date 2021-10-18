@@ -10,6 +10,7 @@ import "../Membership/cxl-membership-grid";
 import "../Order/cxl-order-grid";
 import "../Subscription/cxl-subscription-grid";
 import "./cxl-customer-details";
+import { customer } from "../../state/customer";
 
 @customElement("cxl-customer-view")
 export class CXLCustomerViewElement extends ViewElement {
@@ -104,6 +105,10 @@ export class CXLCustomerViewElement extends ViewElement {
 
     async getItem() {
         const item = await super.getItem();
+
+        customer.setData(item);
+
+        console.log(customer);
 
         await Promise.all([
             item.getOrders(),

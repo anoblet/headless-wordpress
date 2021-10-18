@@ -40,7 +40,7 @@ export class CXLRefundGridElement extends GridElement {
                     auto-width
                     flex-grow="0"
                     header="Amount"
-                    path="amount"
+                    path="amountFormatted"
                 ></vaadin-grid-column>
                 <vaadin-grid-column
                     auto-width

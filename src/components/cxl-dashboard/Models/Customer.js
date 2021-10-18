@@ -93,8 +93,7 @@ export class Customer extends BaseItemModel {
 
     get subscriberSince() {
         return (
-            this._subscriptions &&
-            this._subscriptions.total > 0 &&
+            this._subscriptions?.total > 0 &&
             formatDate(this._subscriptions.items[0].startDate)
         );
     }

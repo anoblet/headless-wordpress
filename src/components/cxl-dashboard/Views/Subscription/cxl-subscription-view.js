@@ -24,6 +24,7 @@ export class CXLSubscriptionViewElement extends ViewElement {
     }
 
     render() {
+        console.log("this", this.item);
         return html`
             <div id="fields" class="grid gap">
                 <vaadin-text-field
@@ -58,25 +59,7 @@ export class CXLSubscriptionViewElement extends ViewElement {
                 >Switch Subscription</vaadin-button
             >
             <div class="grid gap">
-                <b>Coupons</b>
-                <vaadin-grid .items=${this.item?.couponLines}>
-                    <vaadin-grid-column
-                        auto-width
-                        flex-grow="0"
-                        header="#"
-                        path="id"
-                    ></vaadin-grid-column>
-                    <vaadin-grid-column
-                        header="Code"
-                        path="code"
-                    ></vaadin-grid-column>
-                    <vaadin-grid-column
-                        auto-width
-                        flex-grow="0"
-                        header="Discount"
-                        path="discount"
-                    ></vaadin-grid-column>
-                </vaadin-grid>
+                <h4>Current Coupon:</h4>
                 <vaadin-button
                     @click=${() =>
                         navigate(`/subscriptions/${this.item?.id}/coupon`)}
