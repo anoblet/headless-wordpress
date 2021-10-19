@@ -8,14 +8,7 @@ export class CXLSubscriptionViewElement extends ViewElement {
     _itemType = Subscription;
 
     static get styles() {
-        return [
-            ...super.styles,
-            css`
-                .columns {
-                    grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
-                }
-            `,
-        ];
+        return [...super.styles, css``];
     }
 
     render() {

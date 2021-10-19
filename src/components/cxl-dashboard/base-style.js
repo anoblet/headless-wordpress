@@ -13,11 +13,27 @@ export const baseStyle = css`
         text-transform: capitalize;
     }
 
-    .grid {
-        display: grid;
+    .columns {
+        grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
     }
 
-    .grid.gap {
-        grid-gap: 1rem;
+    .flex {
+        display: flex;
+    }
+
+    .flex.column {
+        flex-direction: column;
+    }
+
+    .flex.grow {
+        flex-grow: 1;
+    }
+
+    .gap {
+        gap: 1rem;
+    }
+
+    .grid {
+        display: grid;
     }
 `;
