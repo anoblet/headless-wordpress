@@ -9,79 +9,68 @@ export class CXLSubscriptionViewElement extends ViewElement {
 
     static get styles() {
         return [
-            super.styles,
+            ...super.styles,
             css`
-                :host {
-                    display: grid;
-                    grid-gap: 1rem;
-                    grid-template-rows: repeat(
-                        auto-fit,
-                        minmax(0, max-content)
-                    );
-                }
-
-                .grid {
-                    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-                    grid-template-rows: repeat(
-                        auto-fit,
-                        minmax(0, max-content)
-                    );
+                .columns {
+                    grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
                 }
             `,
         ];
     }
 
     render() {
-        console.log("this", this.item);
         return html`
-            <div id="fields" class="grid gap">
-                <vaadin-text-field
-                    disabled
-                    label="#"
-                    value="${this.item?.id}"
-                ></vaadin-text-field>
-                <vaadin-text-field
-                    disabled
-                    label="Product Name"
-                    value="${this.item?.productName}"
-                ></vaadin-text-field>
-                <vaadin-text-field
-                    disabled
-                    label="Frequency"
-                    value="${this.item?.frequency}"
-                ></vaadin-text-field>
-                <vaadin-text-field
-                    disabled
-                    label="Start Date"
-                    value="${this.item?.startDate}"
-                ></vaadin-text-field>
-                <vaadin-text-field
-                    disabled
-                    label="End Date"
-                    value="${this.item?.endDate}"
-                ></vaadin-text-field>
-                <vaadin-text-field
-                    disabled
-                    label="Coupon Code"
-                    value="${this.item?.couponLines?.[0].code}"
-                ></vaadin-text-field>
-                <vaadin-text-field
-                    disabled
-                    label="Coupon Discount"
-                    value="${this.item?.couponLines?.[0].discount}"
-                ></vaadin-text-field>
-            </div>
             <div class="grid gap">
-                <vaadin-button
-                    @click="${() =>
-                        navigate(`/subscriptions/${this.item?.id}/switch`)}"
-                    >Switch Subscription
-                </vaadin-button>
-                <vaadin-button
-                    @click=${() =>
-                        navigate(`/subscriptions/${this.item?.id}/coupon`)}
-                    >Update Coupon</vaadin-button
-                >
+                <div class="columns grid gap">
+                    <vaadin-text-field
+                        disabled
+                        label="#"
+                        value="${this.item?.id}"
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Product Name"
+                        value="${this.item?.productName}"
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Frequency"
+                        value="${this.item?.frequency}"
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Start Date"
+                        value="${this.item?.startDate}"
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="End Date"
+                        value="${this.item?.endDate}"
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Coupon Code"
+                        value="${this.item?.couponLines?.[0].code}"
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Coupon Discount"
+                        value="${this.item?.couponLines?.[0].discount}"
+                    ></vaadin-text-field>
+                </div>
+                <hr />
+                <div class="columns grid gap">
+                    <vaadin-button
+                        @click="${() =>
+                            navigate(`/subscriptions/${this.item?.id}/switch`)}"
+                        >Switch Subscription
+                    </vaadin-button>
+                    <vaadin-button
+                        @click=${() =>
+                            navigate(`/subscriptions/${this.item?.id}/coupon`)}
+                        >Update Coupon</vaadin-button
+                    >
+                </div>
             </div>
         `;
     }

@@ -5,6 +5,10 @@ export const baseStyle = css`
         --lumo-disabled-text-color: var(--lumo-contrast-90pct);
     }
 
+    hr {
+        width: 100%;
+    }
+
     .capitilize {
         text-transform: capitalize;
     }
