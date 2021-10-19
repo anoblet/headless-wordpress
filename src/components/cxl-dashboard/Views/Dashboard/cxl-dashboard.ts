@@ -11,7 +11,6 @@ import {
     query,
 } from "lit-element";
 import { routes } from "../../routes";
-import "../Customer/cxl-customer-grid";
 
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {
@@ -59,25 +58,18 @@ export class CXLDashboardElement extends LitElement {
                         orientation="vertical"
                         @selected-changed=${this._selectedChanged.bind(this)}
                     >
-                        <vaadin-tab
-                            ><a href="/customers">Dashboard</a></vaadin-tab
-                        >
-                        <!-- <vaadin-tab><a href="/orders">Orders</a></vaadin-tab>
-                        <vaadin-tab
-                            ><a href="/subscriptions"
-                                >Subscriptions</a
-                            ></vaadin-tab
-                        >
-                        <vaadin-tab
-                            ><a href="/memberships/members"
-                                >Memberships</a
-                            ></vaadin-tab
-                        > -->
+                        <vaadin-tab>
+                            <a href="/customers">Dashboard</a>
+                        </vaadin-tab>
                         <vaadin-tab>
                             <a href="/knowledge-base">Knowledge Base</a>
                         </vaadin-tab>
                     </vaadin-tabs>
                 </div>
+                <!-- <div id="breadcrumb">
+                    <a href="/">Home</a> / Breadcrumb / Breadcrumb
+                </div>
+                <hr /> -->
                 <main></main>
             </vaadin-app-layout>
         `;
@@ -96,15 +88,8 @@ export class CXLDashboardElement extends LitElement {
                 case "customer":
                     this._selectedTab = 0;
                     break;
-                case "order":
+                case "knowledge-base":
                     this._selectedTab = 1;
-                    break;
-                case "subscription":
-                    this._selectedTab = 2;
-                    break;
-                case "membership":
-                    this._selectedTab = 3;
-                    break;
                 default:
                     break;
             }

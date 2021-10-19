@@ -2,11 +2,14 @@ import "./Views/Customer/cxl-customer-details";
 import "./Views/Customer/cxl-customer-grid";
 import "./Views/Customer/cxl-customer-view";
 
+import "./Views/knowledge-base/cxl-knowledge-base";
+
 import "./Views/Membership/cxl-membership-grid";
 import "./Views/Membership/cxl-membership-view";
 
 import "./Views/Order/cxl-order-details";
 import "./Views/Order/cxl-order-grid";
+import "./Views/Order/cxl-order-refund";
 import "./Views/Order/cxl-order-view";
 
 import "./Views/Refund/cxl-refund-create";
@@ -29,6 +32,10 @@ export const routes = [
         ],
     },
     {
+        path: "/knowledge-base",
+        component: "cxl-knowledge-base",
+    },
+    {
         path: "/membership",
         children: [
             { path: "details/:id", component: "cxl-membership-details" },
@@ -49,6 +56,7 @@ export const routes = [
         children: [
             { path: "/", component: "cxl-order-grid" },
             { path: "/:id", component: "cxl-order-view" },
+            { path: "/:orderId/refunds", component: "cxl-order-refund" },
             { path: "/:orderId/refunds/:id", component: "cxl-refund-view" },
         ],
     },

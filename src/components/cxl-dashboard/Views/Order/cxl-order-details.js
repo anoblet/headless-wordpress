@@ -76,7 +76,7 @@ export class CXLOrderDetailsElement extends ViewElement {
             <div id="actions">
                 <vaadin-button
                     @click=${this.navigate}
-                    href=${`/refund/create/${this.item?.id}`}
+                    href=${`/orders/${this.item?.id}/refunds`}
                     >Refund
                 </vaadin-button>
                 <vaadin-button>Coupon</vaadin-button>
