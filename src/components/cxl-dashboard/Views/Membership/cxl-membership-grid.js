@@ -70,47 +70,8 @@ export class CXLMembershipGridElement extends GridElement {
         `;
     }
 
-    firstUpdated() {
-        super.firstUpdated();
-
-        this._setColumnRenderers();
-    }
-
-    _formatDateRenderer(root, column, model) {
-        render(
-            html`${new Date(
-                model.item[column.getAttribute("path")]
-            ).toLocaleDateString()}`,
-            root
-        );
-    }
-
-    async _formatPlanIdRenderer(root, column, model) {
-        const plan = await this._getPlan(model.item.plan_id);
-        render(html`${plan.name}`, root);
-    }
-
-    async _getPlan(planId) {
-        return (await WooCommerce().get(`memberships/plans/${planId}`)).data;
-    }
-
-    _setColumnRenderers() {
-        [...this.shadowRoot.querySelectorAll('[path="plan_id"]')].map(
-            (column) => {
-                column.renderer = this._formatPlanIdRenderer.bind(this);
-            }
-        );
-
-        [
-            ...this.shadowRoot.querySelectorAll(
-                'vaadin-grid-sort-column[data-format="date"]'
-            ),
-        ].map((column) => {
-            column.renderer = this._formatDateRenderer;
-        });
-    }
-
-    // filters don't work
+    // Filters don't work
+    // This is overidden because we cannot pass `order` as a parameter for the `memberships/members` enpoint.
     async dataProvider(params, callback) {
         const filter = { ...this.filter };
 

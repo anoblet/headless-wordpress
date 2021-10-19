@@ -1,6 +1,7 @@
 import { BaseItemModel } from "./BaseItemModel";
 import { formatDate } from "../utilities";
 import { WooCommerce } from "../WooCommerce";
+import { capitalize } from "lodash-es";
 
 export class Subscription extends BaseItemModel {
     _version = "wc/v1";
@@ -42,7 +43,7 @@ export class Subscription extends BaseItemModel {
     }
 
     get status() {
-        return this._data.status;
+        return capitalize(this._data.status);
     }
 
     get total() {

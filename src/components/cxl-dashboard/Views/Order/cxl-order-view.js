@@ -1,5 +1,6 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
+import "@vaadin/vaadin-select";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache";
@@ -51,7 +52,16 @@ export class CXLOrderViewElement extends ViewElement {
     render() {
         return html`
             <vaadin-split-layout orientation="vertical">
-                <cxl-order-details .item=${this.item}></cxl-order-details>
+                <div>
+                    <vaadin-select>
+                        <template>
+                            <vaadin-list-box>
+                                <vaadin-item></template>
+                            </vaadin-list-box>
+                        </template>
+                    </vaadin-select>
+                    <cxl-order-details .item=${this.item}></cxl-order-details>
+                </div>
                 <div id="tabs">
                     <vaadin-tabs @selected-changed="${this._selectedChanged}">
                         <vaadin-tab>
