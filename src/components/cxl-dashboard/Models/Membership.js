@@ -1,6 +1,7 @@
 import { WooCommerce } from "../WooCommerce";
 import { BaseItemModel } from "./BaseItemModel";
 import { formatDate } from "../utilities";
+import { capitalize } from "lodash-es";
 
 export class Membership extends BaseItemModel {
     get _endpoint() {
@@ -35,11 +36,10 @@ export class Membership extends BaseItemModel {
     }
 
     get status() {
-        return this._data.status;
+        return capitalize(this._data.status);
     }
 
     _getViewPath(item) {
-        console.log("endpoint", this, this._endpoint);
         return this._endpoint;
     }
 }

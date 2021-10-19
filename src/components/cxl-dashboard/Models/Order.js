@@ -3,6 +3,7 @@ import { BaseItemModel } from "./BaseItemModel";
 import { CouponCollection } from "./CouponCollection";
 import { Customer } from "./Customer";
 import { RefundCollection } from "./RefundCollection";
+import { capitalize } from "lodash-es";
 
 export class Order extends BaseItemModel {
     _customer;
@@ -64,7 +65,7 @@ export class Order extends BaseItemModel {
     }
 
     get status() {
-        return this._data.status;
+        return capitalize(this._data.status);
     }
 
     get total() {
