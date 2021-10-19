@@ -6,7 +6,9 @@ export class GridElement extends BaseElement {
     _baseRoute;
     _boundActionColumnRenderer;
     _collectionType;
+    // @deprecated
     _selectedItem;
+    selectedItem;
     filter;
     items;
     params = {};
@@ -62,12 +64,11 @@ export class GridElement extends BaseElement {
     _registerActiveItemChangedListener() {
         this.grid.addEventListener("active-item-changed", (event) => {
             const item = event.detail.value;
+            // @deprecated
+            this._selectedItem = item;
+            this.selectedItem = item;
             this.grid.selectedItems = item ? [item] : [];
         });
-    }
-
-    _setSelectedItem(index) {
-        this._selectedItem = this.items[index];
     }
 
     // filters don't work

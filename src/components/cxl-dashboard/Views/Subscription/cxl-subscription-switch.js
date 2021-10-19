@@ -4,41 +4,54 @@ import { css, customElement, html, query } from "lit-element";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import { Subscription } from "../../Models/Subscription";
 import { ProductCollection } from "../../Models/ProductCollection";
+import "../Product/cxl-product-grid";
 
 @customElement("cxl-subscription-switch")
 export class CXLSubscriptionSwitchElement extends ViewElement {
     @query("vaadin-combo-box") comboBox;
+    @query("cxl-product-grid") productGrid;
 
     _itemType = Subscription;
 
     static get styles() {
-        return [super.styles, css``];
+        return [
+            super.styles,
+            css`
+                :host {
+                    height: 100%;
+                }
+
+                .full-height {
+                    height: 100%;
+                }
+            `,
+        ];
     }
 
     render() {
         return html`
-            <vaadin-text-field
-                disabled
-                label="Current Product"
-                value="${this.item?.productName}"
-            ></vaadin-text-field>
-            <hr />
-            <vaadin-combo-box label="New Product"></vaadin-combo-box>
-            <hr />
-            <vaadin-button @click="${this.onClick}">Cancel</vaadin-button>
-            <vaadin-button @click="${this.onClick}">Confirm</vaadin-button>
+            <div class="column flex gap full-height">
+                <vaadin-text-field
+                    disabled
+                    label="Current Product"
+                    value="${this.item?.productName}"
+                ></vaadin-text-field>
+                <hr />
+                <cxl-product-grid class="flex grow"></cxl-product-grid>
+                <hr />
+                <div class="columns grid gap">
+                    <vaadin-button @click="${this._back}">
+                        Cancel
+                    </vaadin-button>
+                    <vaadin-button @click="${this.confirm}">
+                        Confirm
+                    </vaadin-button>
+                </div>
+            </div>
         `;
     }
 
-    firstUpdated() {
-        super.firstUpdated();
-
-        this.getProducts();
-    }
-
-    async getProducts() {
-        const productCollection = await new ProductCollection().get();
-
-        console.log(productCollection);
+    confirm() {
+        console.log(this.productGrid.selectedItem);
     }
 }
