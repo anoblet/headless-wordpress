@@ -1,3 +1,4 @@
+import "@vaadin/vaadin-text-field";
 import { css, customElement, html } from "lit-element";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import { Refund } from "../../Models/Refund";
@@ -31,29 +32,42 @@ export class CXLRefundViewElement extends ViewElement {
     }
 
     render() {
-        console.log(this.item);
         return html`
-            <div id="grid">
-                <label>ID</label>
-                <div>${this.item?.id}</div>
-                <label>Date Created</label>
-                <div>${this.item?.date_created}</div>
-                <label>Amount</label>
-                <div>${this.item?.amount}</div>
-                <label>Reason</label>
-                <div>${this.item?.reason}</div>
-                <label>Customer</label>
-                <div>
-                    <a href="/customers/${this.item?.customer?.id}"
-                        >${this.item?.customer?.name}</a
-                    >
-                </div>
-                <label>Order</label>
-                <div>
-                    <a href="/orders/${this.item?.order?.id}"
-                        >#${this.item?.order?.number}</a
-                    >
-                </div>
+            <div class="grid">
+                <vaadin-text-field
+                    disabled
+                    label="ID"
+                    value=${this.item?.id}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    disabled
+                    label="Date Created"
+                    value=${this.item?.dateCreated}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    disabled
+                    label="Amount"
+                    value=${this.item?.amount}
+                ></vaadin-text-field>
+                <vaadin-text-area
+                    disabled
+                    label="Reason"
+                    value=${this.item?.reason}
+                ></vaadin-text-area>
+                <ul>
+                    <li>
+                        Customer:
+                        <a href="/customers/${this.item?.customer?.id}"
+                            >${this.item?.customer?.name}</a
+                        >
+                    </li>
+                    <li>
+                        Order #:
+                        <a href="/orders/${this.item?.order?.id}"
+                            >${this.item?.order?.number}</a
+                        >
+                    </li>
+                </ul>
             </div>
         `;
     }

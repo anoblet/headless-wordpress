@@ -25,8 +25,7 @@ export class Refund extends BaseItemModel {
     }
 
     get amountFormatted() {
-        console.log("amount", this);
-        return `${this.order?.currencySymbol}${this.amount}`;
+        return `${this.amount}`;
     }
 
     get customer() {
@@ -39,6 +38,10 @@ export class Refund extends BaseItemModel {
 
     set date_created(value) {
         this._data.date_created = value;
+    }
+
+    get dateCreated() {
+        return formatDate(this._data.date_created);
     }
 
     get id() {
