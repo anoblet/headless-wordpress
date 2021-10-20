@@ -43,12 +43,12 @@ export class CXLSubscriptionViewElement extends ViewElement {
                     <vaadin-text-field
                         disabled
                         label="Coupon Code"
-                        value="${this.item?.couponLines?.[0].code}"
+                        value="${this.item?.couponLines?.[0]?.code}"
                     ></vaadin-text-field>
                     <vaadin-text-field
                         disabled
                         label="Coupon Discount"
-                        value="${this.item?.couponLines?.[0].discount}"
+                        value="${this.item?.couponLines?.[0]?.discount}"
                     ></vaadin-text-field>
                 </div>
                 <hr />
