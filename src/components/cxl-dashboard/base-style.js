@@ -13,6 +13,10 @@ export const baseStyle = css`
         text-transform: capitalize;
     }
 
+    .column-gap {
+        column-gap: 1rem;
+    }
+
     .columns {
         grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
     }
@@ -35,5 +39,9 @@ export const baseStyle = css`
 
     .grid {
         display: grid;
+    }
+
+    .row-gap {
+        row-gap: 1rem;
     }
 `;

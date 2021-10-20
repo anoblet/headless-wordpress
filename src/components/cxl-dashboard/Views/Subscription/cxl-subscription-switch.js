@@ -43,15 +43,15 @@ export class CXLSubscriptionSwitchElement extends ViewElement {
                     <vaadin-button @click="${this._back}">
                         Cancel
                     </vaadin-button>
-                    <vaadin-button @click="${this.confirm}">
-                        Confirm
+                    <vaadin-button @click="${this.updateItem}">
+                        Update
                     </vaadin-button>
                 </div>
             </div>
         `;
     }
 
-    confirm() {
+    updateItem() {
         console.log(this.productGrid.selectedItem);
     }
 }
