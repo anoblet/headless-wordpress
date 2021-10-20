@@ -21,21 +21,11 @@ export class CXLCustomerDetailsElement extends ViewElement {
                 label::after {
                     content: ":";
                 }
-
-                .grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                .grid.gap {
-                    grid-gap: 0.25rem;
-                }
             `,
         ];
     }
 
     render() {
-        console.log(this.item);
         return html`
             <form>
                 <div class="grid gap">
@@ -46,7 +36,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     >
                 </div>
                 <hr />
-                <div class="grid gap">
+                <div class="column-gap columns grid">
                     <vaadin-text-field
                         @change=${this._updateField}
                         label="First name"
@@ -70,7 +60,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-email-field>
                 </div>
                 <hr />
-                <div class="grid gap">
+                <div class="column-gap columns grid">
                     <vaadin-text-field
                         @change=${this._updateField}
                         label="Address"
@@ -101,7 +91,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-text-field>
                 </div>
                 <hr />
-                <div class="grid gap">
+                <div class="column-gap columns grid">
                     <vaadin-text-field
                         disabled
                         label="Customer since"
@@ -129,7 +119,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     ></vaadin-text-field>
                 </div>
                 <hr />
-                <div class="grid gap">
+                <div class="column-gap columns grid">
                     <vaadin-button>Reset</vaadin-button>
                     <vaadin-button @click=${this._save}>Save</vaadin-button>
                 </div>

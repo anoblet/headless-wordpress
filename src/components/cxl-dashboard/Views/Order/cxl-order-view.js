@@ -52,7 +52,7 @@ export class CXLOrderViewElement extends ViewElement {
     render() {
         return html`
             <vaadin-split-layout orientation="vertical">
-                <div>
+                <!-- <div>
                     <vaadin-select>
                         <template>
                             <vaadin-list-box>
@@ -60,8 +60,8 @@ export class CXLOrderViewElement extends ViewElement {
                             </vaadin-list-box>
                         </template>
                     </vaadin-select>
-                    <cxl-order-details .item=${this.item}></cxl-order-details>
-                </div>
+                </div> -->
+                <cxl-order-details .item=${this.item}></cxl-order-details>
                 <div id="tabs">
                     <vaadin-tabs @selected-changed="${this._selectedChanged}">
                         <vaadin-tab>

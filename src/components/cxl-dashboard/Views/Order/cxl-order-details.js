@@ -51,35 +51,55 @@ export class CXLOrderDetailsElement extends ViewElement {
 
     render() {
         return html`
-            <div id="grid">
-                <label>#</label>
-                <div>${this.item?.number}</div>
-                <label>Status</label>
-                <div class="capitilize">${this.item?.status}</div>
-                <label>Customer</label>
+            <div class="grid row-gap">
                 <div>
-                    <a href="/customers/${this.item?.customer?.id}"
-                        >${this.item?.customer?.name}</a
-                    >
+                    <label>Customer: </label>
+                    <a href="/customers/${this.item?.customer?.id}">
+                        ${this.item?.customer?.name}
+                    </a>
                 </div>
-                <label>Created</label>
-                <div>${this.item?.dateCreated}</div>
-                <label>Modified</label>
-                <div>${this.item?.dateModified}</div>
-                <label>Name</label>
-                <div>${this.item?.productName}</div>
-                <label>Relationship</label>
-                <div>${this.item?.relationship}</div>
-                <label>Amount</label>
-                <div>${this.item?.currencySymbol}${this.item?.total}</div>
-            </div>
-            <div id="actions">
+                <hr />
+                <div class="columns grid column-gap">
+                    <vaadin-text-field
+                        disabled
+                        label="Order #"
+                        value=${this.item?.number}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Status"
+                        value=${this.item?.status}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Date Created"
+                        value=${this.item?.dateCreated}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Date Modified"
+                        value=${this.item?.dateModified}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        label="Product Name"
+                        value=${this.item?.productName}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        label="Relationship"
+                        value=${this.item?.relationship}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        label="Total"
+                        value=${this.item?.total}
+                    ></vaadin-text-field>
+                </div>
+                <hr />
                 <vaadin-button
                     @click=${this.navigate}
                     href=${`/orders/${this.item?.id}/refunds`}
-                    >Refund
+                    >Issue a refund
                 </vaadin-button>
-                <vaadin-button>Coupon</vaadin-button>
+                <!-- <vaadin-button>Coupon</vaadin-button> -->
             </div>
         `;
     }

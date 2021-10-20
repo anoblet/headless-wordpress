@@ -148,15 +148,15 @@ export class CXLOrderRefundElement extends ViewElement {
     async _save() {
         try {
             const response = await this.item.save();
-            notification(
-                {
-                    message: html`<span style="flex: 1; text-align: center;"
-                        >${this._itemName} created!</span
-                    >`,
-                    theme: "success",
-                },
-                this.shadowRoot
-            );
+            // notification(
+            //     {
+            //         message: html`<span style="flex: 1; text-align: center;"
+            //             >${this._itemName} created!</span
+            //         >`,
+            //         theme: "success",
+            //     },
+            //     this.shadowRoot
+            // );
             Router.go(
                 `orders/${this.item.orderId}/refunds/${response.data.id}`
             );

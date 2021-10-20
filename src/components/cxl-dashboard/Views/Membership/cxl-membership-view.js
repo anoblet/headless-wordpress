@@ -9,45 +9,39 @@ export class CXLMembershipViewElement extends ViewElement {
     _itemType = Membership;
 
     static get styles() {
-        return [
-            super.styles,
-            css`
-                .capitalize {
-                    text-transform: capitalize;
-                }
-            `,
-        ];
+        return [super.styles, css``];
     }
 
     render() {
-        console.log(this.item);
         return html`
-            <vaadin-form-layout>
-                <vaadin-form-item>
-                    <span slot="label">ID</span>
-                    ${this.item?.id}
-                </vaadin-form-item>
-                <vaadin-form-item>
-                    <span slot="label">Product Name:</span>
-                    ${this.item?.productName}
-                </vaadin-form-item>
-                <vaadin-form-item class="capitalize">
-                    <span slot="label">Status</span>
-                    ${this.item?.status}
-                </vaadin-form-item>
-                <vaadin-form-item>
-                    <span slot="label">Date Created</span>
-                    ${this.item?.dateCreated}
-                </vaadin-form-item>
-                <vaadin-form-item>
-                    <span slot="label">Start Date</span>
-                    ${this.item?.startDate}
-                </vaadin-form-item>
-                <vaadin-form-item>
-                    <span slot="label">End Date</span>
-                    ${this.item?.endDate}
-                </vaadin-form-item>
-            </vaadin-form-layout>
+            <div class="column-gap columns grid">
+                <vaadin-text-field
+                    disabled
+                    label="ID"
+                    value=${this.item?.id}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    disabled
+                    label="Product Name"
+                    value=${this.item?.productName}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    label="Status"
+                    value=${this.item?.status}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    label="Date Created"
+                    value=${this.item?.dateCreated}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    label="Start Date"
+                    value=${this.item?.startDate}
+                ></vaadin-text-field>
+                <vaadin-text-field
+                    label="End Date"
+                    value=${this.item?.endDate}
+                ></vaadin-text-field>
+            </div>
         `;
     }
 }
