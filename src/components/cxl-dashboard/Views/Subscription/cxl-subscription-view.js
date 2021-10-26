@@ -2,6 +2,8 @@ import { css, customElement, html } from "lit-element";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import { Subscription } from "../../Models/Subscription";
 import { navigate } from "../../utilities";
+// import "@vaadin/vaadin-icon";
+import "@vaadin/vaadin-icons";
 
 @customElement("cxl-subscription-view")
 export class CXLSubscriptionViewElement extends ViewElement {
@@ -14,6 +16,29 @@ export class CXLSubscriptionViewElement extends ViewElement {
     render() {
         return html`
             <div class="grid gap">
+                <div class="columns grid gap">
+                    <vaadin-button
+                        @click=${() =>
+                            navigate(`/customers/${this.item.customerId}`)}
+                    >
+                        Customer
+                        <iron-icon
+                            icon="vaadin:external-link"
+                            slot="suffix"
+                        ></iron-icon>
+                    </vaadin-button>
+                    <vaadin-button
+                        @click="${() =>
+                            navigate(`/subscriptions/${this.item?.id}/switch`)}"
+                        >Upgrade/Downgrade
+                    </vaadin-button>
+                    <vaadin-button
+                        @click=${() =>
+                            navigate(`/subscriptions/${this.item?.id}/coupon`)}
+                        >Edit Coupon</vaadin-button
+                    >
+                </div>
+                <hr />
                 <div class="columns grid gap">
                     <vaadin-text-field
                         disabled
@@ -50,19 +75,6 @@ export class CXLSubscriptionViewElement extends ViewElement {
                         label="Coupon Discount"
                         value="${this.item?.couponLines?.[0]?.discount}"
                     ></vaadin-text-field>
-                </div>
-                <hr />
-                <div class="columns grid gap">
-                    <vaadin-button
-                        @click="${() =>
-                            navigate(`/subscriptions/${this.item?.id}/switch`)}"
-                        >Switch Subscription
-                    </vaadin-button>
-                    <vaadin-button
-                        @click=${() =>
-                            navigate(`/subscriptions/${this.item?.id}/coupon`)}
-                        >Update Coupon</vaadin-button
-                    >
                 </div>
             </div>
         `;

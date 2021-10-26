@@ -8,10 +8,8 @@ export class Membership extends BaseItemModel {
         return `memberships/members/${this.id}`;
     }
 
-    async set(data) {
-        const response = await WooCommerce().put(this.endpoint, data);
-
-        return this;
+    get customerId() {
+        return this._data.customer_id;
     }
 
     get dateCreated() {

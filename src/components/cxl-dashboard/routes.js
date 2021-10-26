@@ -16,13 +16,15 @@ import "./Views/Refund/cxl-refund-create";
 import "./Views/Refund/cxl-refund-grid";
 import "./Views/Refund/cxl-refund-view";
 
+import "./Views/Search/wp-search";
+
 import "./Views/Subscription/cxl-subscription-coupon";
 import "./Views/Subscription/cxl-subscription-grid";
 import "./Views/Subscription/cxl-subscription-switch";
 import "./Views/Subscription/cxl-subscription-view";
 
 export const routes = [
-    { path: "/", component: "cxl-customer-grid" },
+    { path: "/", component: "wp-search" },
     { path: "/iframe.html", component: "cxl-customer-grid" },
     {
         path: "/customers",
@@ -68,6 +70,10 @@ export const routes = [
             { path: "grid", component: "cxl-refund-grid" },
             { path: "view/:orderId/:id", component: "cxl-refund-view" },
         ],
+    },
+    {
+        path: "/search",
+        component: "wp-search",
     },
     {
         path: "/subscriptions",

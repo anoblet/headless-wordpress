@@ -67,6 +67,7 @@
         "@vaadin/vaadin-dialog": "^21.0.3",
         "@vaadin/vaadin-form-layout": "^21.0.3",
         "@vaadin/vaadin-grid": "^21.0.3",
+        "@vaadin/vaadin-icons": "^21.0.3",
         "@vaadin/vaadin-list-box": "^21.0.3",
         "@vaadin/vaadin-notification": "^21.0.3",
         "@vaadin/vaadin-select": "^21.0.3",
