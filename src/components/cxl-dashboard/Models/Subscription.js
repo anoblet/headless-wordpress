@@ -22,6 +22,10 @@ export class Subscription extends BaseItemModel {
         this._data.coupon_lines = value;
     }
 
+    get customerId() {
+        return this._data.customer_id;
+    }
+
     get currency() {
         return this._data.currency;
     }

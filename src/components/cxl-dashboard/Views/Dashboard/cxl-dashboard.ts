@@ -59,6 +59,9 @@ export class CXLDashboardElement extends LitElement {
                         @selected-changed=${this._selectedChanged.bind(this)}
                     >
                         <vaadin-tab>
+                            <a href="/search">Search</a>
+                        </vaadin-tab>
+                        <vaadin-tab>
                             <a href="/customers">Dashboard</a>
                         </vaadin-tab>
                         <vaadin-tab>
@@ -85,11 +88,17 @@ export class CXLDashboardElement extends LitElement {
 
         window.addEventListener("vaadin-router-location-changed", (e: any) => {
             switch (e.detail.location.pathname.split("/")[1]) {
-                case "customer":
+                case "search":
                     this._selectedTab = 0;
                     break;
-                case "knowledge-base":
+                case "customers":
+                case "memberships":
+                case "orders":
+                case "subscriptions":
                     this._selectedTab = 1;
+                    break;
+                case "knowledge-base":
+                    this._selectedTab = 2;
                 default:
                     break;
             }
