@@ -124,10 +124,10 @@ export class WPSearchElement extends BaseElement {
             ...{ subscriptions: await this.searchSubscriptions() },
         };
 
-        // this.data = {
-        //     ...this.data,
-        //     ...{ memberships: await this.searchMemberships() },
-        // };
+        this.data = {
+            ...this.data,
+            ...{ memberships: await this.searchMemberships() },
+        };
 
         this._pending = false;
     }
