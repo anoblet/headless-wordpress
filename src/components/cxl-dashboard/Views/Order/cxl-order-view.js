@@ -52,16 +52,18 @@ export class CXLOrderViewElement extends ViewElement {
     render() {
         return html`
             <vaadin-split-layout orientation="vertical">
-                <!-- <div>
-                    <vaadin-select>
-                        <template>
-                            <vaadin-list-box>
-                                <vaadin-item></template>
-                            </vaadin-list-box>
-                        </template>
-                    </vaadin-select>
-                </div> -->
-                <cxl-order-details .item=${this.item}></cxl-order-details>
+                <div class="full-height grid gap">
+                    <div class="column-gap columns grid">
+                        <vaadin-button @click=${() => navigate("#")}>
+                            Wordpress
+                            <iron-icon
+                                icon="vaadin:external-link"
+                                slot="suffix"
+                            ></iron-icon>
+                        </vaadin-button>
+                    </div>
+                    <cxl-order-details .item=${this.item}></cxl-order-details>
+                </div>
                 <div id="tabs">
                     <vaadin-tabs @selected-changed="${this._selectedChanged}">
                         <vaadin-tab>

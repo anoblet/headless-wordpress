@@ -1,16 +1,19 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
+import "@vaadin/vaadin-icons/vaadin-iconset";
 import "@vaadin/vaadin-split-layout";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache.js";
+import { wordpress } from "../../assets";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import { Customer } from "../../Models/Customer";
+import { customer } from "../../state/customer";
+import { navigate } from "../../utilities";
 import "../Membership/cxl-membership-grid";
 import "../Order/cxl-order-grid";
 import "../Subscription/cxl-subscription-grid";
 import "./cxl-customer-details";
-import { customer } from "../../state/customer";
 
 @customElement("cxl-customer-view")
 export class CXLCustomerViewElement extends ViewElement {
@@ -43,10 +46,23 @@ export class CXLCustomerViewElement extends ViewElement {
     render() {
         return html`
             <vaadin-split-layout orientation="vertical">
-                <cxl-customer-details
-                    .item=${this.item}
-                    get-disabled
-                ></cxl-customer-details>
+                <div class="full-height grid gap">
+                    <div class="column-gap columns grid">
+                        <vaadin-button @click=${() => navigate("#")}>
+                            Wordpress
+                            <!-- <vaadin-icon .svg=${wordpress} slot="suffix">
+                            </vaadin-icon> -->
+                            <iron-icon
+                                icon="vaadin:external-link"
+                                slot="suffix"
+                            ></iron-icon>
+                        </vaadin-button>
+                    </div>
+                    <cxl-customer-details
+                        .item=${this.item}
+                        get-disabled
+                    ></cxl-customer-details>
+                </div>
                 <div id="tabs">
                     <vaadin-tabs @selected-changed="${this._selectedChanged}">
                         <vaadin-tab>
