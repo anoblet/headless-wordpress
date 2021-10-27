@@ -33,6 +33,10 @@ export const baseStyle = css`
         flex-grow: 1;
     }
 
+    .full-height {
+        height: 100%;
+    }
+
     .gap {
         gap: 1rem;
     }
