@@ -94,7 +94,7 @@ export class GridElement extends BaseElement {
                     ...this.params,
                     ...filter,
                     order,
-                    orderby,
+                    // orderby,
                     page: ++params.page,
                     per_page: params.pageSize,
                 },
