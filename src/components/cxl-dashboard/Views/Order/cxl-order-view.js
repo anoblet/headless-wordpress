@@ -4,8 +4,10 @@ import "@vaadin/vaadin-select";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache";
+import { config } from "../../../../config";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import { Order } from "../../Models/Order";
+import { navigateExternal } from "../../utilities";
 import "../Refund/cxl-refund-grid";
 import "./cxl-order-details";
 
@@ -54,7 +56,12 @@ export class CXLOrderViewElement extends ViewElement {
             <vaadin-split-layout orientation="vertical">
                 <div class="full-height grid gap">
                     <div class="column-gap columns grid">
-                        <vaadin-button @click=${() => navigate("#")}>
+                        <vaadin-button
+                            @click=${() =>
+                                navigateExternal(
+                                    `${config.wooCommerce.url}/wp/wp-admin/post.php?post=${this.item.id}&action=edit`
+                                )}
+                        >
                             Wordpress
                             <iron-icon
                                 icon="vaadin:external-link"

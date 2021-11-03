@@ -33,3 +33,5 @@ export const notification = ({ duration = 5000, message, theme }, node) => {
 export const notify = notification;
 
 export const navigate = (path) => Router.go(path);
+
+export const navigateExternal = (url) => window.open(url, "_blank");
