@@ -11,6 +11,7 @@
         "build:typescript:watch": "tsc --build tsconfig.json -w",
         "build:watch": "npm-run-all -p build:typescript:watch build:rollup:watch",
         "commit": "git-cz",
+        "push": "npm run save && git push",
         "save": "git add . && git commit -m \"refactor(headless-wordpress): save\"",
         "service-worker": "node bin/workbox-build.js && rollup -c etc/rollup.service-worker.js && rimraf tmp",
         "server": "wds --app-index public/index.html --open --root-dir public --watch",
