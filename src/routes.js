@@ -1,27 +1,31 @@
-import "./Views/Customer/cxl-customer-details";
-import "./Views/Customer/cxl-customer-grid";
-import "./Views/Customer/cxl-customer-view";
+import "./components/cxl-dashboard/Views/Customer/cxl-customer-details";
+import "./components/cxl-dashboard/Views/Customer/cxl-customer-grid";
+import "./components/cxl-dashboard/Views/Customer/cxl-customer-view";
 
-import "./Views/knowledge-base/cxl-knowledge-base";
+import "./components/cxl-dashboard/Views/knowledge-base/cxl-knowledge-base";
 
-import "./Views/Membership/cxl-membership-grid";
-import "./Views/Membership/cxl-membership-view";
+import "./components/cxl-dashboard/Views/Membership/cxl-membership-grid";
+import "./components/cxl-dashboard/Views/Membership/cxl-membership-view";
 
-import "./Views/Order/cxl-order-details";
-import "./Views/Order/cxl-order-grid";
-import "./Views/Order/cxl-order-refund";
-import "./Views/Order/cxl-order-view";
+import "./components/cxl-dashboard/Views/Order/cxl-order-details";
+import "./components/cxl-dashboard/Views/Order/cxl-order-grid";
+import "./components/cxl-dashboard/Views/Order/cxl-order-refund";
+import "./components/cxl-dashboard/Views/Order/cxl-order-view";
 
-import "./Views/Refund/cxl-refund-create";
-import "./Views/Refund/cxl-refund-grid";
-import "./Views/Refund/cxl-refund-view";
+import "./components/cxl-dashboard/Views/Refund/cxl-refund-create";
+import "./components/cxl-dashboard/Views/Refund/cxl-refund-grid";
+import "./components/cxl-dashboard/Views/Refund/cxl-refund-view";
 
-import "./Views/Search/wp-search";
+import "./components/cxl-dashboard/Views/Search/wp-search";
 
-import "./Views/Subscription/cxl-subscription-coupon";
-import "./Views/Subscription/cxl-subscription-grid";
-import "./Views/Subscription/cxl-subscription-switch";
-import "./Views/Subscription/cxl-subscription-view";
+import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-coupon";
+import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-grid";
+import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-switch";
+import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-view";
+
+import "./components/wp-login";
+
+const guard = (context, commands) => {};
 
 export const routes = [
     { path: "/", component: "wp-search" },
@@ -36,6 +40,10 @@ export const routes = [
     {
         path: "/knowledge-base",
         component: "cxl-knowledge-base",
+    },
+    {
+        path: "/login",
+        component: "wp-login",
     },
     {
         path: "/membership",

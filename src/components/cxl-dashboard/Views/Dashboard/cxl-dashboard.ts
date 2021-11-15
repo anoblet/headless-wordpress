@@ -10,7 +10,7 @@ import {
     property,
     query,
 } from "lit-element";
-import { routes } from "../../routes";
+import { routes } from "../../../../routes";
 
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {

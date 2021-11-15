@@ -70,6 +70,7 @@
         "@vaadin/vaadin-grid": "^21.0.3",
         "@vaadin/vaadin-icons": "^21.0.3",
         "@vaadin/vaadin-list-box": "^21.0.3",
+        "@vaadin/vaadin-login": "^21.0.3",
         "@vaadin/vaadin-notification": "^21.0.3",
         "@vaadin/vaadin-select": "^21.0.3",
         "@vaadin/vaadin-split-layout": "^21.0.3",
