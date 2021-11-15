@@ -3,6 +3,7 @@ import "@vaadin/vaadin-notification";
 import { css, html, LitElement } from "lit-element";
 import { render } from "lit-html";
 import { baseStyle } from "../base-style";
+import { navigate } from "../utilities";
 
 export class BaseElement extends LitElement {
     pending;
@@ -86,5 +87,20 @@ export class BaseElement extends LitElement {
         el.id = "pending-message";
         el.textContent = "Loading...";
         this.shadowRoot.appendChild(el);
+    }
+
+    onBeforeEnter(location, commands, router) {
+        if (!this.isAuthorized()) {
+            console.log("Not authorized");
+            console.log(commands.redirect);
+
+            // commands.redirect("/login");
+            navigate("/login");
+        }
+    }
+
+    isAuthorized() {
+        console.log("Checking authorization");
+        return localStorage.getItem("token") !== null;
     }
 }
