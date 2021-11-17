@@ -16,7 +16,7 @@ import "./components/cxl-dashboard/Views/Refund/cxl-refund-create";
 import "./components/cxl-dashboard/Views/Refund/cxl-refund-grid";
 import "./components/cxl-dashboard/Views/Refund/cxl-refund-view";
 
-import "./components/cxl-dashboard/Views/Search/wp-search";
+import "./components/wp-search";
 
 import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-coupon";
 import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-grid";

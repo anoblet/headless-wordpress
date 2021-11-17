@@ -40,7 +40,7 @@ export class GridElement extends BaseElement {
     }
 
     firstUpdated() {
-        this.grid.dataProvider = this.dataProvider.bind(this);
+        if (!this.items) this.grid.dataProvider = this.dataProvider.bind(this);
 
         this._registerActiveItemChangedListener();
     }
