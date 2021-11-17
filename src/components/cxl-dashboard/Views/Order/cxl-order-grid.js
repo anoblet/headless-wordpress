@@ -3,7 +3,7 @@ import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html } from "lit-element";
 import { GridElement } from "../../BaseElements/GridElement";
-import { OrderCollection } from "../../Models/OrderCollection";
+import { OrderCollection } from "../../../../models/OrderCollection";
 
 @customElement("cxl-order-grid")
 export class CXLOrderGridElement extends GridElement {

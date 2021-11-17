@@ -2,8 +2,8 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html, property } from "lit-element";
+import { RefundCollection } from "../../../../models";
 import { GridElement } from "../../BaseElements/GridElement";
-import { RefundCollection } from "../../Models/RefundCollection";
 
 @customElement("cxl-refund-grid")
 export class CXLRefundGridElement extends GridElement {
