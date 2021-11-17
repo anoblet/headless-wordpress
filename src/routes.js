@@ -28,8 +28,7 @@ import "./components/wp-login";
 const guard = (context, commands) => {};
 
 export const routes = [
-    { path: "/", component: "wp-search" },
-    { path: "/iframe.html", component: "cxl-customer-grid" },
+    { path: "/", component: "cxl-customer-grid" },
     {
         path: "/customers",
         children: [
