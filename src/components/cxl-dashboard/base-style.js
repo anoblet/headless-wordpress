@@ -28,7 +28,7 @@ export const baseStyle = css`
     }
 
     .columns {
-        grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
     }
 
     .flex {
