@@ -3,8 +3,8 @@ import "@vaadin/vaadin-text-field/vaadin-email-field";
 import { css, customElement, html, query } from "lit-element";
 import { render } from "lit-html";
 import objectPath from "object-path";
+import { Customer } from "../../../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import { Customer } from "../../Models/Customer";
 import { notify } from "../../utilities";
 
 @customElement("cxl-customer-details")

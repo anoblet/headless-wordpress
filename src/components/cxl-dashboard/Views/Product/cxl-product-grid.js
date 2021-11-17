@@ -1,6 +1,6 @@
-import { customElement, html, property } from "lit-element";
+import { customElement, html } from "lit-element";
+import { ProductCollection } from "../../../../models";
 import { GridElement } from "../../BaseElements/GridElement";
-import { ProductCollection } from "../../Models/ProductCollection";
 
 @customElement("cxl-product-grid")
 export class CXLProductGridElement extends GridElement {

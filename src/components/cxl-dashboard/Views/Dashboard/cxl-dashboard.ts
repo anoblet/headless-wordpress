@@ -1,6 +1,7 @@
 import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-app-layout";
 import "@vaadin/vaadin-app-layout/vaadin-drawer-toggle";
+import "@vaadin/vaadin-icon";
 import "@vaadin/vaadin-tabs";
 import {
     css,
@@ -11,7 +12,6 @@ import {
     query,
 } from "lit-element";
 import { routes } from "../../../../routes";
-import "@vaadin/vaadin-icon";
 import { navigate } from "../../utilities";
 
 @customElement("cxl-dashboard")

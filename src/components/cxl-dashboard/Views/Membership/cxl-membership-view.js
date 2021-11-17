@@ -1,8 +1,8 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
 import { css, customElement, html } from "lit-element";
+import { Membership } from "../../../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import { Membership } from "../../Models/Membership";
 import { navigate } from "../../utilities";
 
 @customElement("cxl-membership-view")

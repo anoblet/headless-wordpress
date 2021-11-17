@@ -2,8 +2,8 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html } from "lit-element";
+import { SubscriptionCollection } from "../../../../models";
 import { GridElement } from "../../BaseElements/GridElement";
-import { SubscriptionCollection } from "../../Models/SubscriptionCollection";
 
 @customElement("cxl-subscription-grid")
 export class CXLSubscriptionGridElement extends GridElement {

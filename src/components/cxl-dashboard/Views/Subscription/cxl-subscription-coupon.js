@@ -1,7 +1,7 @@
 import "@vaadin/vaadin-button";
 import { css, customElement, html, query } from "lit-element";
+import { Subscription } from "../../../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import { Subscription } from "../../Models/Subscription";
 import { navigate } from "../../utilities";
 import "../Coupon/cxl-coupon-grid";
 

@@ -2,10 +2,9 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-grid";
 import "@vaadin/vaadin-grid/vaadin-grid-filter-column";
 import "@vaadin/vaadin-grid/vaadin-grid-sort-column";
-import { customElement, html, render } from "lit-element";
+import { customElement, html } from "lit-element";
+import { MembershipCollection } from "../../../../models";
 import { GridElement } from "../../BaseElements/GridElement";
-import { MembershipCollection } from "../../Models/MembershipCollection";
-import { WooCommerce } from "../../WooCommerce";
 
 @customElement("cxl-membership-grid")
 export class CXLMembershipGridElement extends GridElement {
