@@ -13,7 +13,7 @@ export class CXLOrderGridElement extends GridElement {
 
     render() {
         return html`
-            <vaadin-grid .items=${this.items} size="1000">
+            <vaadin-grid .items=${this.items}>
                 <vaadin-grid-column
                     auto-width
                     flex-grow="0"

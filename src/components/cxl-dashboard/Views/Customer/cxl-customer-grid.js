@@ -12,7 +12,7 @@ export class CXLCustomerGridElement extends GridElement {
 
     render() {
         return html`
-            <vaadin-grid>
+            <vaadin-grid .items=${this.items}>
                 <vaadin-grid-sort-column
                     auto-width
                     flex-grow="0"
