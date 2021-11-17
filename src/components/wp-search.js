@@ -23,15 +23,12 @@ export class WPSearchElement extends BaseElement {
             ...super.styles,
             css`
                 #primary {
-                    box-sizing: border-box;
                     flex: 0 auto;
-                    height: max-content;
                 }
 
                 #tabs {
                     display: flex;
                     flex-direction: column;
-                    height: 100%;
                 }
 
                 #tabContent {
@@ -50,19 +47,37 @@ export class WPSearchElement extends BaseElement {
                     </vaadin-text-field>
                 </div>
                 <div id="tabs">
-                    ${this._pending ? html`Searching...` : nothing}
+                    ${this._pending
+                        ? html`
+                              <div class="center full-height">Searching...</div>
+                          `
+                        : nothing}
                     ${!this._pending && !this.data
-                        ? html`Please enter a search term.`
+                        ? html`
+                              <div class="center full-height">
+                                  Please enter a search term.
+                              </div>
+                          `
                         : nothing}
                     ${!this._pending && this.data
                         ? html`
                               <vaadin-tabs
                                   @selected-changed=${this.selectedChanged}
                               >
-                                  <vaadin-tab>Customers</vaadin-tab>
-                                  <vaadin-tab>Orders</vaadin-tab>
-                                  <vaadin-tab>Subscriptions</vaadin-tab>
-                                  <vaadin-tab>Memberships</vaadin-tab>
+                                  <vaadin-tab>
+                                      Customers (${this.data.customers.length})
+                                  </vaadin-tab>
+                                  <vaadin-tab>
+                                      Orders (${this.data.orders.length})
+                                  </vaadin-tab>
+                                  <vaadin-tab>
+                                      Subscriptions
+                                      (${this.data.subscriptions.length})
+                                  </vaadin-tab>
+                                  <vaadin-tab>
+                                      Memberships
+                                      (${this.data.memberships.length})
+                                  </vaadin-tab>
                               </vaadin-tabs>
                               <div id="tabContent">
                                   ${this.currentTab === 0

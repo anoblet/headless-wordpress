@@ -17,6 +17,12 @@ export const baseStyle = css`
         text-transform: capitalize;
     }
 
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .column-gap {
         column-gap: 1rem;
     }
