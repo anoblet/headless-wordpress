@@ -1,6 +1,10 @@
 import { css } from "lit-element";
 
 export const baseStyle = css`
+    * {
+        box-sizing: border-box;
+    }
+
     :host {
         --lumo-disabled-text-color: var(--lumo-contrast-90pct);
     }
@@ -47,5 +51,13 @@ export const baseStyle = css`
 
     .row-gap {
         row-gap: 1rem;
+    }
+
+    .padding {
+        padding: 1rem;
+    }
+
+    .padding-bottom {
+        padding-bottom: 1rem;
     }
 `;

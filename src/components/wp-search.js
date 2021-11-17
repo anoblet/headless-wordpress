@@ -10,8 +10,11 @@ import { BaseElement } from "./cxl-dashboard/BaseElements/BaseElement";
 
 @customElement("wp-search")
 export class WPSearchElement extends BaseElement {
-    @property({ type: Object }) data;
     @property({ type: Boolean }) _pending;
+
+    @property({ type: Number }) currentTab = 0;
+
+    @property({ type: Object }) data;
 
     @query("vaadin-text-field") textField;
 
@@ -19,12 +22,21 @@ export class WPSearchElement extends BaseElement {
         return [
             ...super.styles,
             css`
-                :host {
-                    height: initial;
+                #primary {
+                    box-sizing: border-box;
+                    flex: 0 auto;
+                    height: max-content;
                 }
 
-                .min-height {
-                    min-height: 512px;
+                #tabs {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                }
+
+                #tabContent {
+                    height: 100%;
+                    overflow: hidden;
                 }
             `,
         ];
@@ -32,47 +44,65 @@ export class WPSearchElement extends BaseElement {
 
     render() {
         return html`
-            <div class="gap grid">
-                <form>
-                    <vaadin-text-field
-                        @change=${this.search}
-                        label="Search"
-                    ></vaadin-text-field>
-                </form>
-                <hr />
-                ${this._pending ? html`Searching...` : nothing}
-                ${!this._pending && !this.data
-                    ? html`Please enter a search term.`
-                    : nothing}
-                ${!this._pending && this.data
-                    ? html`
-                          <div class="column flex min-height">
-                              <h1>Customers:</h1>
-                              <cxl-customer-grid .items=${this.data.customers}>
-                              </cxl-customer-grid>
-                          </div>
-                          <div class="column flex min-height">
-                              <h1>Orders:</h1>
-                              <cxl-order-grid .items=${this.data.orders}>
-                              </cxl-order-grid>
-                          </div>
-                          <div class="column flex min-height">
-                              <h1>Subscriptions:</h1>
-                              <cxl-subscription-grid
-                                  .items=${this.data.subscriptions}
+            <vaadin-split-layout orientation="vertical" style="height: 100%;">
+                <div id="primary" class="padding-bottom">
+                    <vaadin-text-field @change=${this.search} label="Search">
+                    </vaadin-text-field>
+                </div>
+                <div id="tabs">
+                    ${this._pending ? html`Searching...` : nothing}
+                    ${!this._pending && !this.data
+                        ? html`Please enter a search term.`
+                        : nothing}
+                    ${!this._pending && this.data
+                        ? html`
+                              <vaadin-tabs
+                                  @selected-changed=${this.selectedChanged}
                               >
-                              </cxl-subscription-grid>
-                          </div>
-                          <div class="column flex min-height">
-                              <h1>Memberships:</h1>
-                              <cxl-membership-grid
-                                  .items=${this.data.memberships}
-                              >
-                              </cxl-membership-grid>
-                          </div>
-                      `
-                    : nothing}
-            </div>
+                                  <vaadin-tab>Customers</vaadin-tab>
+                                  <vaadin-tab>Orders</vaadin-tab>
+                                  <vaadin-tab>Subscriptions</vaadin-tab>
+                                  <vaadin-tab>Memberships</vaadin-tab>
+                              </vaadin-tabs>
+                              <div id="tabContent">
+                                  ${this.currentTab === 0
+                                      ? html`
+                                            <cxl-customer-grid
+                                                .items=${this.data.customers}
+                                            >
+                                            </cxl-customer-grid>
+                                        `
+                                      : nothing}
+                                  ${this.currentTab === 1
+                                      ? html`
+                                            <cxl-order-grid
+                                                .items=${this.data.orders}
+                                            >
+                                            </cxl-order-grid>
+                                        `
+                                      : nothing}
+                                  ${this.currentTab === 2
+                                      ? html`
+                                            <cxl-subscription-grid
+                                                .items=${this.data
+                                                    .subscriptions}
+                                            >
+                                            </cxl-subscription-grid>
+                                        `
+                                      : nothing}
+                                  ${this.currentTab === 3
+                                      ? html`
+                                            <cxl-membership-grid
+                                                .items=${this.data.memberships}
+                                            >
+                                            </cxl-membership-grid>
+                                        `
+                                      : nothing}
+                              </div>
+                          `
+                        : nothing}
+                </div>
+            </vaadin-split-layout>
         `;
     }
 
@@ -132,5 +162,9 @@ export class WPSearchElement extends BaseElement {
                 params: { search: this.textField.value },
             }).get()
         ).items;
+    }
+
+    selectedChanged(event) {
+        this.currentTab = event.detail.value;
     }
 }

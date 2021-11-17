@@ -103,21 +103,18 @@ export class CXLDashboardElement extends LitElement {
     }
 
     firstUpdated() {
+        this.layout.drawerOpened = false;
+
         const router = new Router(this.main);
         router.setRoutes(routes);
 
         window.addEventListener("vaadin-router-location-changed", (e: any) => {
             switch (e.detail.location.pathname.split("/")[1]) {
-                case "customers":
-                case "memberships":
-                case "orders":
-                case "subscriptions":
-                    this._selectedTab = 0;
-                    break;
                 case "knowledge-base":
                     this._selectedTab = 1;
-                default:
                     break;
+                default:
+                    this._selectedTab = 0;
             }
         });
     }

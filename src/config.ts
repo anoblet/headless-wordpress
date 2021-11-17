@@ -1,5 +1,5 @@
 export const config = {
-    brand: "CXL",
+    company: { name: "Conversion XL" },
     style: {
         primaryColor: "#d61f2c",
     },
@@ -11,6 +11,6 @@ export const config = {
         consumerSecret: "cs_d650eefab1f2d4ec819a3797b735f20863ed701c",
     },
     wordpress: {
-        url: "",
+        url: "https://silent-zebra-37.loca.lt",
     },
 };
