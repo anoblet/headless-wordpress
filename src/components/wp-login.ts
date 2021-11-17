@@ -16,7 +16,11 @@ export class WPLoginElement extends BaseElement {
 
     render() {
         return html`
-            <vaadin-login-overlay></vaadin-login-overlay>
+            <vaadin-login-overlay
+                description="Please login using your credentials"
+            >
+                <h3 slot="title">${config.title}</h3>
+            </vaadin-login-overlay>
             <vaadin-dialog id="feedbackDialog">
                 <template>Login is being processed...</template>
             </vaadin-dialog>

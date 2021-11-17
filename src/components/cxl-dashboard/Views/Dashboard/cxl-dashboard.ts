@@ -11,6 +11,8 @@ import {
     query,
 } from "lit-element";
 import { routes } from "../../../../routes";
+import "@vaadin/vaadin-icon";
+import { navigate } from "../../utilities";
 
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {
@@ -29,9 +31,23 @@ export class CXLDashboardElement extends LitElement {
                 height: 100%;
             }
 
+            #navbarContent {
+                padding: 0.5rem 1rem 0.5rem 0;
+            }
+
             #tabContent {
                 height: 100%;
                 overflow: hidden;
+            }
+
+            .padding-right {
+                padding-right: 1rem;
+            }
+
+            .space-between {
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-between;
             }
         `;
     }
@@ -42,10 +58,16 @@ export class CXLDashboardElement extends LitElement {
                 <vaadin-drawer-toggle
                     slot="navbar [touch-optimized]"
                 ></vaadin-drawer-toggle>
-                <span slot="navbar">
+                <span class="space-between" id="navbarContent" slot="navbar">
                     <vaadin-tab>
                         <a href="/">CXL Customer Service</a>
                     </vaadin-tab>
+                    <vaadin-button
+                        @click=${() => navigate("/search")}
+                        theme="primary"
+                    >
+                        <vaadin-icon icon="vaadin:search"></vaadin-icon>
+                    </vaadin-button>
                 </span>
                 <div
                     slot="drawer"
@@ -58,9 +80,6 @@ export class CXLDashboardElement extends LitElement {
                         orientation="vertical"
                         @selected-changed=${this._selectedChanged.bind(this)}
                     >
-                        <vaadin-tab>
-                            <a href="/search">Search</a>
-                        </vaadin-tab>
                         <vaadin-tab>
                             <a href="/customers">Dashboard</a>
                         </vaadin-tab>

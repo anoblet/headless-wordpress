@@ -1,4 +1,6 @@
 export const config = {
+    brand: "CXL",
+    title: "Customer Service Dashboard",
     wooCommerce: {
         // url: "http://localhost:8080",
         url: "https://silent-zebra-37.loca.lt",
