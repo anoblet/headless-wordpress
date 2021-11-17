@@ -17,6 +17,7 @@ import { navigate } from "../../utilities";
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {
     @property({ type: Number }) _selectedTab = 0;
+    @query("vaadin-app-layout") layout;
     @query("main") main;
 
     static get styles() {
@@ -107,17 +108,14 @@ export class CXLDashboardElement extends LitElement {
 
         window.addEventListener("vaadin-router-location-changed", (e: any) => {
             switch (e.detail.location.pathname.split("/")[1]) {
-                case "search":
-                    this._selectedTab = 0;
-                    break;
                 case "customers":
                 case "memberships":
                 case "orders":
                 case "subscriptions":
-                    this._selectedTab = 1;
+                    this._selectedTab = 0;
                     break;
                 case "knowledge-base":
-                    this._selectedTab = 2;
+                    this._selectedTab = 1;
                 default:
                     break;
             }
