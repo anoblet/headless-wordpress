@@ -1,6 +1,6 @@
+import { BaseItemModel } from "../models";
 import { formatDate } from "../utilities";
 import { WooCommerce } from "../WooCommerce";
-import { BaseItemModel } from "./BaseItemModel";
 
 export class Coupon extends BaseItemModel {
     _data = {};

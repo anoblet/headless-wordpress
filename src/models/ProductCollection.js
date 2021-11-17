@@ -1,4 +1,4 @@
-import { BaseCollectionModel } from "./BaseCollectionModel";
+import { BaseCollectionModel } from "../models";
 import { Product } from "./Product";
 
 export class ProductCollection extends BaseCollectionModel {

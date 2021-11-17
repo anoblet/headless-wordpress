@@ -6,8 +6,8 @@ import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache";
 import { config } from "../../../../config";
 import { Order } from "../../../../models";
+import { navigateExternal } from "../../../../utilities";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import { navigateExternal } from "../../utilities";
 import "../Refund/cxl-refund-grid";
 import "./cxl-order-details";
 

@@ -1,4 +1,4 @@
-import { BaseItemModel } from "./BaseItemModel";
+import { BaseItemModel } from "../models";
 
 export class Product extends BaseItemModel {
     get _endpoint() {

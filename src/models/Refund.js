@@ -2,7 +2,7 @@ import { formatDate, measure } from "../utilities";
 import { WooCommerce } from "../WooCommerce";
 import { Customer } from "./Customer";
 import { Order } from "./Order";
-import { BaseItemModel } from "./BaseItemModel";
+import { BaseItemModel } from "../models";
 
 export class Refund extends BaseItemModel {
     get _endpoint() {

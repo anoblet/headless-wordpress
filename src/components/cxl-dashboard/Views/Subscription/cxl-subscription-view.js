@@ -2,8 +2,8 @@ import "@vaadin/vaadin-icons";
 import { css, customElement, html } from "lit-element";
 import { config } from "../../../../config";
 import { Subscription } from "../../../../models";
+import { navigate, navigateExternal } from "../../../../utilities";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import { navigate, navigateExternal } from "../../utilities";
 
 @customElement("cxl-subscription-view")
 export class CXLSubscriptionViewElement extends ViewElement {

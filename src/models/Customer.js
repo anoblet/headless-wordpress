@@ -1,8 +1,10 @@
+import {
+    BaseItemModel,
+    MembershipCollection,
+    OrderCollection,
+    SubscriptionCollection,
+} from "../models";
 import { formatDate, measure } from "../utilities";
-import { BaseItemModel } from "./BaseItemModel";
-import { MembershipCollection } from "./MembershipCollection";
-import { OrderCollection } from "./OrderCollection";
-import { SubscriptionCollection } from "./SubscriptionCollection";
 import { WooCommerce } from "../WooCommerce";
 
 export class Customer extends BaseItemModel {

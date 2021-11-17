@@ -1,4 +1,4 @@
-import { BaseCollectionModel } from "./BaseCollectionModel";
+import { BaseCollectionModel } from "../models";
 import { Refund } from "./Refund";
 
 export class RefundCollection extends BaseCollectionModel {
