@@ -1,5 +1,8 @@
 export const config = {
     brand: "CXL",
+    style: {
+        primaryColor: "#d61f2c",
+    },
     title: "Customer Service Dashboard",
     wooCommerce: {
         // url: "http://localhost:8080",
