@@ -24,6 +24,10 @@ export class Order extends BaseItemModel {
         return this._customer;
     }
 
+    get customerName() {
+        return `${this._data.billing.first_name} ${this._data.billing.last_name}`;
+    }
+
     get customerId() {
         return this._data.customer_id;
     }

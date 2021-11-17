@@ -21,8 +21,20 @@ export class CXLOrderGridElement extends GridElement {
                     path="number"
                 ></vaadin-grid-column>
                 <vaadin-grid-column
+                    auto-width
+                    flex-grow="0"
+                    header="Customer"
+                    path="customerName"
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="Product Name"
                     path="productName"
+                ></vaadin-grid-column>
+                <vaadin-grid-column
+                    auto-width
+                    flex-grow="0"
+                    header="Date Created"
+                    path="dateCreated"
                 ></vaadin-grid-column>
                 <vaadin-grid-column
                     auto-width
