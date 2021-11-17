@@ -12,7 +12,7 @@ import {
     query,
 } from "lit-element";
 import { routes } from "../../../../routes";
-import { navigate } from "../../utilities";
+import { navigate } from "../../../../utilities";
 
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {

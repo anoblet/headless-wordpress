@@ -1,5 +1,5 @@
-import { WooCommerce } from "../WooCommerce";
 import { measure } from "../utilities";
+import { WooCommerce } from "../WooCommerce";
 
 export class BaseCollectionModel {
     _itemType;

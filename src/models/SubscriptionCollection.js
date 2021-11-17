@@ -1,4 +1,4 @@
-import { BaseCollectionModel } from "./BaseCollectionModel";
+import { BaseCollectionModel } from "../models";
 import { Subscription } from "./Subscription";
 
 export class SubscriptionCollection extends BaseCollectionModel {

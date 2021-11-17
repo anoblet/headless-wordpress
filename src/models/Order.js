@@ -1,5 +1,5 @@
 import { formatDate } from "../utilities";
-import { BaseItemModel } from "./BaseItemModel";
+import { BaseItemModel } from "../models";
 import { CouponCollection } from "./CouponCollection";
 import { Customer } from "./Customer";
 import { RefundCollection } from "./RefundCollection";

@@ -3,8 +3,8 @@ import "@vaadin/vaadin-text-field/vaadin-number-field";
 import "@vaadin/vaadin-text-field/vaadin-text-area";
 import { css, customElement, html, queryAll } from "lit-element";
 import { Order, Refund } from "../../../../models";
+import { notification } from "../../../../utilities";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import { notification } from "../../utilities";
 
 @customElement("cxl-refund-create")
 export class CXLRefundCreateElement extends ViewElement {

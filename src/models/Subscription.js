@@ -1,4 +1,4 @@
-import { BaseItemModel } from "./BaseItemModel";
+import { BaseItemModel } from "../models";
 import { formatDate } from "../utilities";
 import { WooCommerce } from "../WooCommerce";
 import { capitalize } from "lodash-es";

@@ -4,7 +4,7 @@ import "@vaadin/vaadin-split-layout";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache.js";
-import { Coupon } from "../../Models/Coupon";
+import { Coupon } from "../../../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import "../Membership/cxl-membership-grid";
 import "../Order/cxl-order-grid";
