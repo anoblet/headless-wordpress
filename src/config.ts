@@ -9,6 +9,6 @@ export const config = {
         consumerSecret: "cs_d650eefab1f2d4ec819a3797b735f20863ed701c",
     },
     wordpress: {
-        url: "https://empty-deer-54.loca.lt",
+        url: "https://chatty-deer-95.loca.lt",
     },
 };

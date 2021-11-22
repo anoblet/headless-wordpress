@@ -61,7 +61,7 @@ export class WPLoginElement extends BaseElement {
         formData.append("password", event.detail.password);
 
         const response = await fetch(
-            `${config.wooCommerce.url}/wp-json/jwt-auth/v1/token`,
+            `${config.wordpress.url}/wp-json/jwt-auth/v1/token`,
             {
                 headers: { "Bypass-Tunnel-Reminder": "true" },
                 method: "POST",
@@ -73,7 +73,9 @@ export class WPLoginElement extends BaseElement {
                 localStorage.setItem("token", token);
                 navigate("/");
             })
-            .catch((error) => {});
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     onBeforeEnter() {
