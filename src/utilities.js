@@ -40,3 +40,10 @@ export const logout = () => {
     localStorage.removeItem("token");
     navigate("/login");
 };
+
+export const handleError = (error) => {
+    // Instance host may have changed, so logout and try again
+    if (error.response.status === 403) {
+        logout();
+    }
+};

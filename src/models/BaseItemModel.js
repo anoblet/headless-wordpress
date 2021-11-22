@@ -13,9 +13,14 @@ export class BaseItemModel extends BaseModel {
 
     async get() {
         await measure({ endpoint: this._endpoint }, async () => {
-            const { data } = await WooCommerce({ version: this._version }).get(
-                this._endpoint
-            );
+            const { data } = await WooCommerce({ version: this._version })
+                .get(this._endpoint)
+                .catch((error) => {
+                    // Instance host may have changed, so logout and try again
+                    if (error.response.status === 403) {
+                        logout();
+                    }
+                });
             Object.assign(this._data, data);
         });
 
