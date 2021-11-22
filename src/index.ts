@@ -1,4 +1,4 @@
-import { config } from "./config";
+// import { config } from "./config";
 
 // document.body.style.setProperty("--lumo-primary-color", config.style.primaryColor);
 // document.body.style.setProperty("--lumo-primary-text-color", config.style.primaryColor);

@@ -35,3 +35,8 @@ export const notify = notification;
 export const navigate = (path) => Router.go(path);
 
 export const navigateExternal = (url) => window.open(url, "_blank");
+
+export const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+};

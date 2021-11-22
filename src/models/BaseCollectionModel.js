@@ -1,4 +1,4 @@
-import { measure } from "../utilities";
+import { logout, measure } from "../utilities";
 import { WooCommerce } from "../WooCommerce";
 
 export class BaseCollectionModel {
@@ -26,7 +26,14 @@ export class BaseCollectionModel {
             async () => {
                 const { data, headers } = await WooCommerce({
                     version: this._version,
-                }).get(this._endpoint, this.params);
+                })
+                    .get(this._endpoint, this.params)
+                    .catch((error) => {
+                        // Instance host may have changed, so logout and try again
+                        if (error.response.status === 403) {
+                            logout();
+                        }
+                    });
 
                 this._items = data.map((item) => {
                     const _item = new this._itemType(item);
