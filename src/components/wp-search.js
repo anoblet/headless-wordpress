@@ -41,12 +41,13 @@ export class WPSearchElement extends BaseElement {
 
     render() {
         return html`
-            <vaadin-split-layout orientation="vertical" style="height: 100%;">
+            <div class="column flex full-height">
                 <div id="primary" class="padding-bottom">
                     <vaadin-text-field @change=${this.search} label="Search">
                     </vaadin-text-field>
                 </div>
-                <div id="tabs">
+                <hr />
+                <div id="tabs" class="grow">
                     ${this._pending
                         ? html`
                               <div class="center full-height">Searching...</div>
@@ -117,7 +118,7 @@ export class WPSearchElement extends BaseElement {
                           `
                         : nothing}
                 </div>
-            </vaadin-split-layout>
+            </div>
         `;
     }
 
