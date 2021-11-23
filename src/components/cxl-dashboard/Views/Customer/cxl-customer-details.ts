@@ -16,7 +16,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
 
     static get styles() {
         return [
-            super.styles,
+            ...super.styles,
             css`
                 label::after {
                     content: ":";

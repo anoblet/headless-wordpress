@@ -13,6 +13,10 @@ export const baseStyle = css`
         width: 100%;
     }
 
+    vaadin-tab {
+        cursor: pointer;
+    }
+
     .capitilize {
         text-transform: capitalize;
     }
@@ -53,6 +57,10 @@ export const baseStyle = css`
 
     .grid {
         display: grid;
+    }
+
+    .grow {
+        flex-grow: 1;
     }
 
     .row-gap {
