@@ -39,6 +39,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                 <div class="column-gap columns grid">
                     <vaadin-text-field
                         @change=${this._updateField}
+                        disabled
                         label="First name"
                         name="firstName"
                         value=${this.item?.firstName}
@@ -46,6 +47,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-text-field>
                     <vaadin-text-field
                         @change=${this._updateField}
+                        disabled
                         label="Last name"
                         name="lastName"
                         value=${this.item?.lastName}
@@ -53,6 +55,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-text-field>
                     <vaadin-email-field
                         @change=${this._updateField}
+                        disabled
                         label="Email"
                         name="email"
                         value=${this.item?.email}
@@ -63,6 +66,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                 <div class="column-gap columns grid">
                     <vaadin-text-field
                         @change=${this._updateField}
+                        disabled
                         label="Address"
                         name="billing.address"
                         value=${this.item?.billing?.address}
@@ -70,6 +74,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-text-field>
                     <vaadin-text-field
                         @change=${this._updateField}
+                        disabled
                         label="City"
                         name="billing.city"
                         value=${this.item?.billing?.city}
@@ -77,6 +82,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-text-field>
                     <vaadin-text-field
                         @change=${this._updateField}
+                        disabled
                         label="Country"
                         name="billing.country"
                         value=${this.item?.billing?.country}
@@ -84,6 +90,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
                     </vaadin-text-field>
                     <vaadin-text-field
                         @change=${this._updateField}
+                        disabled
                         label="Phone"
                         name="billing.phone"
                         value=${this.item?.billing?.phone}

@@ -13,52 +13,53 @@ export class CXLCustomerGridElement extends GridElement {
     render() {
         return html`
             <vaadin-grid .items=${this.items}>
-                <vaadin-grid-sort-column
+                <vaadin-grid-column
                     auto-width
                     flex-grow="0"
                     header="#"
                     path="id"
-                ></vaadin-grid-sort-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="First Name"
                     resizable
                     path="firstName"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
+                >
+                </vaadin-grid-column>
+                <vaadin-grid-column
                     header="Last Name"
                     resizable
                     path="lastName"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     auto-width
                     header="Email"
                     resizable
                     path="email"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     header="City"
                     resizable
                     path="billing.city"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     flex-grow="0"
                     header="Country"
                     resizable
                     path="billing.country"
                 >
-                </vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
+                </vaadin-grid-column>
+                <vaadin-grid-column
                     header="Customer Since"
                     resizable
                     path="customerSince"
-                ></vaadin-grid-filter-column>
-                <vaadin-grid-filter-column
+                ></vaadin-grid-column>
+                <vaadin-grid-column
                     flex-grow="0"
                     header="Paying"
                     resizable
                     path="isPayingCustomerFormatted"
                 >
-                </vaadin-grid-filter-column>
+                </vaadin-grid-column>
                 <vaadin-grid-column
                     auto-width
                     flex-grow="0"
