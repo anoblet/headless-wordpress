@@ -12,7 +12,8 @@ import {
     query,
 } from "lit-element";
 import { routes } from "../../../../routes";
-import { navigate } from "../../../../utilities";
+import { navigate, navigateExternal } from "../../../../utilities";
+import "@conversionxl/cxl-lumo-styles";
 
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {
@@ -85,7 +86,13 @@ export class CXLDashboardElement extends LitElement {
                             <a href="/customers">Dashboard</a>
                         </vaadin-tab>
                         <vaadin-tab>
-                            <a href="/knowledge-base">Knowledge Base</a>
+                            <a
+                                href="https://app.clickup.com/"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                Knowledge Base
+                            </a>
                         </vaadin-tab>
                     </vaadin-tabs>
                 </div>

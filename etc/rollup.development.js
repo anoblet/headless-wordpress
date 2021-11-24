@@ -10,7 +10,10 @@ module.exports = {
         format: "esm",
     },
     plugins: [
-        resolve({ browser: true, dedupe: ["lit-element", "lit-html"] }),
+        resolve({
+            browser: true,
+            dedupe: ["@vaadin/vaadin-lumo-styles", "lit-element", "lit-html"],
+        }),
         commonjs(),
         json(),
         nodePolyfills(),
