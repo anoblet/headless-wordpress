@@ -96,10 +96,6 @@ export class CXLDashboardElement extends LitElement {
                         </vaadin-tab>
                     </vaadin-tabs>
                 </div>
-                <!-- <div id="breadcrumb">
-                    <a href="/">Home</a> / Breadcrumb / Breadcrumb
-                </div>
-                <hr /> -->
                 <main></main>
             </vaadin-app-layout>
         `;

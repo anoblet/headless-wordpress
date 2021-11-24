@@ -1,7 +1,7 @@
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-text-field/vaadin-email-field";
-import { css, customElement, html, query } from "lit-element";
-import { render } from "lit-html";
+import { css, customElement, html, property, query } from "lit-element";
+import { nothing, render } from "lit-html";
 import objectPath from "object-path";
 import { Customer } from "../../../../models";
 import { notify } from "../../../../utilities";
@@ -9,10 +9,12 @@ import { ViewElement } from "../../BaseElements/ViewElement";
 
 @customElement("cxl-customer-details")
 export class CXLCustomerDetailsElement extends ViewElement {
-    _itemType = Customer;
-    _updates = {};
+    @property({ type: Boolean }) editable = false;
 
     @query("form") form;
+
+    _itemType = Customer;
+    _updates = {};
 
     static get styles() {
         return [
@@ -125,11 +127,17 @@ export class CXLCustomerDetailsElement extends ViewElement {
                         value=${this.item?.currency}
                     ></vaadin-text-field>
                 </div>
-                <hr />
-                <div class="column-gap columns grid">
-                    <vaadin-button>Reset</vaadin-button>
-                    <vaadin-button @click=${this._save}>Save</vaadin-button>
-                </div>
+                ${this.editable
+                    ? html`
+                          <hr />
+                          <div class="column-gap columns grid">
+                              <vaadin-button>Reset</vaadin-button>
+                              <vaadin-button @click=${this._save}
+                                  >Save</vaadin-button
+                              >
+                          </div>
+                      `
+                    : nothing}
             </form>
         `;
     }
