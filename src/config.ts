@@ -9,6 +9,6 @@ export const config = {
         consumerSecret: "cs_d650eefab1f2d4ec819a3797b735f20863ed701c",
     },
     wordpress: {
-        url: "https://short-husky-93.loca.lt",
+        url: "https://smart-monkey-29.loca.lt",
     },
 };
