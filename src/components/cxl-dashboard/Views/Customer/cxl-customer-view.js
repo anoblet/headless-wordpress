@@ -50,7 +50,7 @@ export class CXLCustomerViewElement extends ViewElement {
                         <vaadin-button
                             @click=${() =>
                                 navigateExternal(
-                                    `${config.wooCommerce.url}/wp/wp-admin/user-edit.php?user_id=${this.item.id}`
+                                    `${config.wordpress.url}/wp/wp-admin/user-edit.php?user_id=${this.item.id}`
                                 )}
                         >
                             Wordpress

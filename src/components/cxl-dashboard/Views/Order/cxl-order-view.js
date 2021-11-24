@@ -59,7 +59,7 @@ export class CXLOrderViewElement extends ViewElement {
                         <vaadin-button
                             @click=${() =>
                                 navigateExternal(
-                                    `${config.wooCommerce.url}/wp/wp-admin/post.php?post=${this.item.id}&action=edit`
+                                    `${config.wordpress.url}/wp/wp-admin/post.php?post=${this.item.id}&action=edit`
                                 )}
                         >
                             Wordpress
