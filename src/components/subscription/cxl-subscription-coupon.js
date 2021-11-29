@@ -1,9 +1,9 @@
 import "@vaadin/vaadin-button";
 import { css, customElement, html, query } from "lit-element";
-import { Subscription } from "../../../../models";
-import { navigate } from "../../../../utilities";
+import { Subscription } from "../../models";
+import { navigate } from "../../utilities";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import "../Coupon/cxl-coupon-grid";
+import "../coupon/cxl-coupon-grid";
 
 @customElement("cxl-subscription-coupon")
 export class CXLSubscriptionCouponElement extends ViewElement {

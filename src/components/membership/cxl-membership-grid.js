@@ -3,7 +3,7 @@ import "@vaadin/vaadin-grid";
 import "@vaadin/vaadin-grid/vaadin-grid-filter-column";
 import "@vaadin/vaadin-grid/vaadin-grid-sort-column";
 import { customElement, html } from "lit-element";
-import { MembershipCollection } from "../../../../models";
+import { MembershipCollection } from "../../models";
 import { GridElement } from "../../BaseElements/GridElement";
 
 @customElement("cxl-membership-grid")

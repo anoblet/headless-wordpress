@@ -7,8 +7,8 @@ import { cache } from "lit-html/directives/cache";
 import { config } from "../../config";
 import { Order } from "../../models";
 import { navigateExternal } from "../../utilities";
-import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
-import "../cxl-dashboard/Views/Refund/cxl-refund-grid";
+import { ViewElement } from "../../BaseElements/ViewElement";
+import "../refund/cxl-refund-grid";
 import "./cxl-order-details";
 
 @customElement("cxl-order-view")

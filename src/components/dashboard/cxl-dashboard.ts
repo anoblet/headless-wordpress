@@ -11,8 +11,8 @@ import {
     property,
     query,
 } from "lit-element";
-import { routes } from "../../../../routes";
-import { navigate, navigateExternal } from "../../../../utilities";
+import { routes } from "../../routes";
+import { navigate, navigateExternal } from "../../utilities";
 import "@conversionxl/cxl-lumo-styles";
 
 @customElement("cxl-dashboard")

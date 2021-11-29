@@ -2,26 +2,26 @@ import "./components/customer/cxl-customer-details";
 import "./components/customer/cxl-customer-grid";
 import "./components/customer/cxl-customer-view";
 
-import "./components/cxl-dashboard/Views/knowledge-base/cxl-knowledge-base";
+import "./components/knowledge-base/cxl-knowledge-base";
 
-import "./components/cxl-dashboard/Views/Membership/cxl-membership-grid";
-import "./components/cxl-dashboard/Views/Membership/cxl-membership-view";
+import "./components/membership/cxl-membership-grid";
+import "./components/membership/cxl-membership-view";
 
 import "./components/order/cxl-order-details";
 import "./components/order/cxl-order-grid";
 import "./components/order/cxl-order-refund";
 import "./components/order/cxl-order-view";
 
-import "./components/cxl-dashboard/Views/Refund/cxl-refund-create";
-import "./components/cxl-dashboard/Views/Refund/cxl-refund-grid";
-import "./components/cxl-dashboard/Views/Refund/cxl-refund-view";
+import "./components/refund/cxl-refund-create";
+import "./components/refund/cxl-refund-grid";
+import "./components/refund/cxl-refund-view";
 
 import "./components/wp-search";
 
-import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-coupon";
-import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-grid";
-import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-switch";
-import "./components/cxl-dashboard/Views/Subscription/cxl-subscription-view";
+import "./components/subscription/cxl-subscription-coupon";
+import "./components/subscription/cxl-subscription-grid";
+import "./components/subscription/cxl-subscription-switch";
+import "./components/subscription/cxl-subscription-view";
 
 import "./components/wp-login";
 

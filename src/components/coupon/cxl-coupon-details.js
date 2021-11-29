@@ -1,5 +1,5 @@
 import { css, customElement, html, property } from "lit-element";
-import { Coupon } from "../../../../models";
+import { Coupon } from "../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
 
 @customElement("cxl-coupon-details")

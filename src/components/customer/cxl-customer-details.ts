@@ -5,7 +5,7 @@ import { nothing, render } from "lit-html";
 import objectPath from "object-path";
 import { Customer } from "../../models";
 import { notify } from "../../utilities";
-import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
+import { ViewElement } from "../../BaseElements/ViewElement";
 
 @customElement("cxl-customer-details")
 export class CXLCustomerDetailsElement extends ViewElement {
