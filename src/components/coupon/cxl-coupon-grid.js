@@ -2,7 +2,7 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html } from "lit-element";
-import { CouponCollection } from "../../../../models";
+import { CouponCollection } from "../../models";
 import { GridElement } from "../../BaseElements/GridElement";
 import "./cxl-coupon-view";
 

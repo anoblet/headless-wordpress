@@ -2,7 +2,7 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html, property } from "lit-element";
-import { RefundCollection } from "../../../../models";
+import { RefundCollection } from "../../models";
 import { GridElement } from "../../BaseElements/GridElement";
 
 @customElement("cxl-refund-grid")

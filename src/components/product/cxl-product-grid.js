@@ -1,5 +1,5 @@
 import { customElement, html } from "lit-element";
-import { ProductCollection } from "../../../../models";
+import { ProductCollection } from "../../models";
 import { GridElement } from "../../BaseElements/GridElement";
 
 @customElement("cxl-product-grid")

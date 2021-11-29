@@ -4,11 +4,11 @@ import "@vaadin/vaadin-split-layout";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache.js";
-import { Coupon } from "../../../../models";
+import { Coupon } from "../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import "../Membership/cxl-membership-grid";
-import "../../../order/cxl-order-grid";
-import "../Subscription/cxl-subscription-grid";
+import "../membership/cxl-membership-grid";
+import "../order/cxl-order-grid";
+import "../subscription/cxl-subscription-grid";
 
 @customElement("cxl-coupon-view")
 export class CXLCouponViewElement extends ViewElement {

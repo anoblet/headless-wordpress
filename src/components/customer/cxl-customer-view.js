@@ -9,10 +9,10 @@ import { config } from "../../config";
 import { Customer } from "../../models";
 import { navigateExternal } from "../../utilities";
 import "./cxl-customer-details";
-import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
-import "../cxl-dashboard/Views/Membership/cxl-membership-grid";
+import { ViewElement } from "../../BaseElements/ViewElement";
+import "../membership/cxl-membership-grid";
 import "../order/cxl-order-grid";
-import "../cxl-dashboard/Views/Subscription/cxl-subscription-grid";
+import "../subscription/cxl-subscription-grid";
 
 @customElement("cxl-customer-view")
 export class CXLCustomerViewElement extends ViewElement {

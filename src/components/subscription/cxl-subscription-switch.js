@@ -1,9 +1,9 @@
 import "@vaadin/vaadin-combo-box";
 import "@vaadin/vaadin-text-field";
 import { css, customElement, html, query } from "lit-element";
-import { Subscription } from "../../../../models";
+import { Subscription } from "../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
-import "../Product/cxl-product-grid";
+import "../product/cxl-product-grid";
 
 @customElement("cxl-subscription-switch")
 export class CXLSubscriptionSwitchElement extends ViewElement {

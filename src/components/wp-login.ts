@@ -2,7 +2,7 @@ import "@vaadin/vaadin-login";
 import { css, customElement, html, query } from "lit-element";
 import { config } from "../config";
 import { navigate } from "../utilities";
-import { BaseElement } from "./cxl-dashboard/BaseElements/BaseElement";
+import { BaseElement } from "../BaseElements/BaseElement";
 
 @customElement("wp-login")
 export class WPLoginElement extends BaseElement {

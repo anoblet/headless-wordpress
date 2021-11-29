@@ -6,7 +6,7 @@ import {
     OrderCollection,
     SubscriptionCollection,
 } from "../models";
-import { BaseElement } from "./cxl-dashboard/BaseElements/BaseElement";
+import { BaseElement } from "../BaseElements/BaseElement";
 
 @customElement("wp-search")
 export class WPSearchElement extends BaseElement {
