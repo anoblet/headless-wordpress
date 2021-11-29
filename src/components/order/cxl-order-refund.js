@@ -2,9 +2,9 @@ import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-text-field/vaadin-number-field";
 import "@vaadin/vaadin-text-field/vaadin-text-area";
 import { css, customElement, html, queryAll } from "lit-element";
-import { Order, Refund } from "../../../../models";
-import { notification } from "../../../../utilities";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { Order, Refund } from "../../models";
+import { notification } from "../../utilities";
+import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
 
 @customElement("cxl-order-refund")
 export class CXLOrderRefundElement extends ViewElement {

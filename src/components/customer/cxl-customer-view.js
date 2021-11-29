@@ -5,14 +5,14 @@ import "@vaadin/vaadin-split-layout";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache.js";
-import { config } from "../../../../config";
-import { Customer } from "../../../../models";
-import { navigateExternal } from "../../../../utilities";
-import { ViewElement } from "../../BaseElements/ViewElement";
-import "../Membership/cxl-membership-grid";
-import "../Order/cxl-order-grid";
-import "../Subscription/cxl-subscription-grid";
+import { config } from "../../config";
+import { Customer } from "../../models";
+import { navigateExternal } from "../../utilities";
 import "./cxl-customer-details";
+import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
+import "../cxl-dashboard/Views/Membership/cxl-membership-grid";
+import "../order/cxl-order-grid";
+import "../cxl-dashboard/Views/Subscription/cxl-subscription-grid";
 
 @customElement("cxl-customer-view")
 export class CXLCustomerViewElement extends ViewElement {

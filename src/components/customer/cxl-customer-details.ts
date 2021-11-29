@@ -1,7 +1,7 @@
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-text-field/vaadin-email-field";
 import { css, customElement, html, property, query } from "lit-element";
-import { render } from "lit-html";
+import { nothing, render } from "lit-html";
 import objectPath from "object-path";
 import { Customer } from "../../models";
 import { notify } from "../../utilities";
@@ -9,7 +9,7 @@ import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
 
 @customElement("cxl-customer-details")
 export class CXLCustomerDetailsElement extends ViewElement {
-    @property({ type: Boolean }) isEditable = false;
+    @property({ type: Boolean }) editable = false;
 
     @query("form") form;
 
@@ -22,11 +22,6 @@ export class CXLCustomerDetailsElement extends ViewElement {
             css`
                 label::after {
                     content: ":";
-                }
-
-                .field {
-                    align-items: center;
-                    grid-template-columns: max-content auto;
                 }
             `,
         ];
@@ -41,81 +36,108 @@ export class CXLCustomerDetailsElement extends ViewElement {
                         checked=${this.item?.isPayingCustomer}
                         >Paying customer</vaadin-checkbox
                     >
-                    <fieldset>
-                        <legend>Contact</legend>
-                        <div class="gap columns grid">
-                            ${this.renderField({
-                                label: "First Name",
-                                name: "firstName",
-                                value: this.item?.firstName,
-                            })}
-                            ${this.renderField({
-                                label: "Last Name",
-                                name: "lastName",
-                                value: this.item?.lastName,
-                            })}
-                            ${this.renderField({
-                                label: "Email",
-                                name: "email",
-                                value: this.item?.email,
-                            })}
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Billing</legend>
-                        <div class="gap columns grid">
-                            ${this.renderField({
-                                label: "Address",
-                                name: "billing.address",
-                                value: this.item?.billing?.address,
-                            })}
-                            ${this.renderField({
-                                label: "City",
-                                name: "billing.city",
-                                value: this.item?.billing?.city,
-                            })}
-                            ${this.renderField({
-                                label: "Country",
-                                name: "billing.country",
-                                value: this.item?.billing?.country,
-                            })}
-                            ${this.renderField({
-                                label: "Phone",
-                                name: "billing.phone",
-                                value: this.item?.billing?.phone,
-                            })}
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Details</legend>
-                        <div class="column-gap columns grid">
-                            <vaadin-text-field
-                                disabled
-                                label="Customer since"
-                                value=${this.item?.customerSince}
-                            ></vaadin-text-field>
-                            <vaadin-text-field
-                                disabled
-                                label="Subscriber since"
-                                value=${this.item?.subscriberSince}
-                            ></vaadin-text-field>
-                            <vaadin-text-field
-                                disabled
-                                label="Subscription"
-                                value=${this.item?.productName}
-                            ></vaadin-text-field>
-                            <vaadin-text-field
-                                disabled
-                                label="Currency"
-                                value=${this.item?.currency}
-                            ></vaadin-text-field>
-                        </div>
-                    </fieldset>
-                    <div class="column-gap columns grid">
-                        <vaadin-button>Reset</vaadin-button>
-                        <vaadin-button @click=${this._save}>Save</vaadin-button>
-                    </div>
                 </div>
+                <hr />
+                <div class="column-gap columns grid">
+                    <vaadin-text-field
+                        @change=${this._updateField}
+                        disabled
+                        label="First name"
+                        name="firstName"
+                        value=${this.item?.firstName}
+                    >
+                    </vaadin-text-field>
+                    <vaadin-text-field
+                        @change=${this._updateField}
+                        disabled
+                        label="Last name"
+                        name="lastName"
+                        value=${this.item?.lastName}
+                    >
+                    </vaadin-text-field>
+                    <vaadin-email-field
+                        @change=${this._updateField}
+                        disabled
+                        label="Email"
+                        name="email"
+                        value=${this.item?.email}
+                    >
+                    </vaadin-email-field>
+                </div>
+                <hr />
+                <div class="column-gap columns grid">
+                    <vaadin-text-field
+                        @change=${this._updateField}
+                        disabled
+                        label="Address"
+                        name="billing.address"
+                        value=${this.item?.billing?.address}
+                    >
+                    </vaadin-text-field>
+                    <vaadin-text-field
+                        @change=${this._updateField}
+                        disabled
+                        label="City"
+                        name="billing.city"
+                        value=${this.item?.billing?.city}
+                    >
+                    </vaadin-text-field>
+                    <vaadin-text-field
+                        @change=${this._updateField}
+                        disabled
+                        label="Country"
+                        name="billing.country"
+                        value=${this.item?.billing?.country}
+                    >
+                    </vaadin-text-field>
+                    <vaadin-text-field
+                        @change=${this._updateField}
+                        disabled
+                        label="Phone"
+                        name="billing.phone"
+                        value=${this.item?.billing?.phone}
+                    >
+                    </vaadin-text-field>
+                </div>
+                <hr />
+                <div class="column-gap columns grid">
+                    <vaadin-text-field
+                        disabled
+                        label="Customer since"
+                        value=${this.item?.customerSince}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Subscriber since"
+                        value=${this.item?.subscriberSince}
+                    ></vaadin-text-field>
+                    <!-- <vaadin-text-field
+                        disabled
+                        label="Team"
+                        value=${this.item?.team}
+                    ></vaadin-text-field> -->
+                    <vaadin-text-field
+                        disabled
+                        label="Subscription"
+                        value=${this.item?.productName}
+                    ></vaadin-text-field>
+                    <vaadin-text-field
+                        disabled
+                        label="Currency"
+                        value=${this.item?.currency}
+                    ></vaadin-text-field>
+                </div>
+                ${this.editable
+                    ? html`
+                          <hr />
+                          <div class="column-gap columns grid">
+                              <vaadin-button>Reset</vaadin-button>
+                              <vaadin-button @click=${this._save}
+                                  >Save</vaadin-button
+                              >
+                          </div>
+                      `
+                    : nothing}
             </form>
         `;
     }
@@ -184,24 +206,5 @@ export class CXLCustomerDetailsElement extends ViewElement {
         console.log(this.item);
         this.item[e.target.getAttribute("name")] = e.target.value;
         console.log(this.item._updates);
-    }
-
-    renderField(field) {
-        return !this.isEditable
-            ? html`
-                  <div class="field grid gap">
-                      <label>${field.label}</label>
-                      ${field.value}
-                  </div>
-              `
-            : html`
-                  <vaadin-text-field
-                      @change=${this._updateField}
-                      label=${field.label}
-                      name=${field.name}
-                      value=${field.value}
-                  >
-                  </vaadin-text-field>
-              `;
     }
 }

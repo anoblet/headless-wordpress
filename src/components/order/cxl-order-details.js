@@ -2,8 +2,8 @@ import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
 import { css, customElement, html, property } from "lit-element";
-import { Order } from "../../../../models";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { Order } from "../../models";
+import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
 
 @customElement("cxl-order-details")
 export class CXLOrderDetailsElement extends ViewElement {

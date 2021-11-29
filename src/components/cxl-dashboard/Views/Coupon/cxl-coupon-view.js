@@ -7,7 +7,7 @@ import { cache } from "lit-html/directives/cache.js";
 import { Coupon } from "../../../../models";
 import { ViewElement } from "../../BaseElements/ViewElement";
 import "../Membership/cxl-membership-grid";
-import "../Order/cxl-order-grid";
+import "../../../order/cxl-order-grid";
 import "../Subscription/cxl-subscription-grid";
 
 @customElement("cxl-coupon-view")
