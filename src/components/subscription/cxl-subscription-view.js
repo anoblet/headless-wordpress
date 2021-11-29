@@ -3,7 +3,7 @@ import { css, customElement, html } from "lit-element";
 import { config } from "../../config";
 import { Subscription } from "../../models";
 import { navigate, navigateExternal } from "../../utilities";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 
 @customElement("cxl-subscription-view")
 export class CXLSubscriptionViewElement extends ViewElement {

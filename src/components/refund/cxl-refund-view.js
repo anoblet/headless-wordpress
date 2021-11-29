@@ -1,7 +1,7 @@
 import "@vaadin/vaadin-text-field";
 import { css, customElement, html } from "lit-element";
 import { Refund } from "../../models";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 
 @customElement("cxl-refund-view")
 export class CXLRefundViewElement extends ViewElement {

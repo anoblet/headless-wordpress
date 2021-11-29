@@ -1,6 +1,6 @@
 import "@vaadin/vaadin-accordion";
 import { css, customElement, html } from "lit-element";
-import { BaseElement } from "../../BaseElements/BaseElement";
+import { BaseElement } from "../../base-elements/BaseElement";
 
 @customElement("cxl-knowledge-base")
 export class CXLKnowledgeBaseElement extends BaseElement {

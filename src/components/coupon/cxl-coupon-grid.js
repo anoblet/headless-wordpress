@@ -3,7 +3,7 @@ import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html } from "lit-element";
 import { CouponCollection } from "../../models";
-import { GridElement } from "../../BaseElements/GridElement";
+import { GridElement } from "../../base-elements/GridElement";
 import "./cxl-coupon-view";
 
 @customElement("cxl-coupon-grid")

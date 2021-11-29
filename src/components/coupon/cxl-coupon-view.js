@@ -5,7 +5,7 @@ import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache.js";
 import { Coupon } from "../../models";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 import "../membership/cxl-membership-grid";
 import "../order/cxl-order-grid";
 import "../subscription/cxl-subscription-grid";

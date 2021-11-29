@@ -3,7 +3,7 @@ import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html, property } from "lit-element";
 import { RefundCollection } from "../../models";
-import { GridElement } from "../../BaseElements/GridElement";
+import { GridElement } from "../../base-elements/GridElement";
 
 @customElement("cxl-refund-grid")
 export class CXLRefundGridElement extends GridElement {
