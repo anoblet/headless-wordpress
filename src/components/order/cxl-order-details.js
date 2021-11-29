@@ -3,7 +3,7 @@ import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
 import { css, customElement, html, property } from "lit-element";
 import { Order } from "../../models";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 
 @customElement("cxl-order-details")
 export class CXLOrderDetailsElement extends ViewElement {

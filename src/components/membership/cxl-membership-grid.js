@@ -4,7 +4,7 @@ import "@vaadin/vaadin-grid/vaadin-grid-filter-column";
 import "@vaadin/vaadin-grid/vaadin-grid-sort-column";
 import { customElement, html } from "lit-element";
 import { MembershipCollection } from "../../models";
-import { GridElement } from "../../BaseElements/GridElement";
+import { GridElement } from "../../base-elements/GridElement";
 
 @customElement("cxl-membership-grid")
 export class CXLMembershipGridElement extends GridElement {

@@ -4,7 +4,7 @@ import "@vaadin/vaadin-text-field/vaadin-text-area";
 import { css, customElement, html, queryAll } from "lit-element";
 import { Order, Refund } from "../../models";
 import { notification } from "../../utilities";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 
 @customElement("cxl-order-refund")
 export class CXLOrderRefundElement extends ViewElement {

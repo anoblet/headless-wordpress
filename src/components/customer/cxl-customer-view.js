@@ -9,7 +9,7 @@ import { config } from "../../config";
 import { Customer } from "../../models";
 import { navigateExternal } from "../../utilities";
 import "./cxl-customer-details";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 import "../membership/cxl-membership-grid";
 import "../order/cxl-order-grid";
 import "../subscription/cxl-subscription-grid";

@@ -7,7 +7,7 @@ import { cache } from "lit-html/directives/cache";
 import { config } from "../../config";
 import { Order } from "../../models";
 import { navigateExternal } from "../../utilities";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 import "../refund/cxl-refund-grid";
 import "./cxl-order-details";
 

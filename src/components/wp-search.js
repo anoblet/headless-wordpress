@@ -6,7 +6,7 @@ import {
     OrderCollection,
     SubscriptionCollection,
 } from "../models";
-import { BaseElement } from "../BaseElements/BaseElement";
+import { BaseElement } from "../base-elements/BaseElement";
 
 @customElement("wp-search")
 export class WPSearchElement extends BaseElement {

@@ -1,6 +1,6 @@
 import { css, customElement, html, property } from "lit-element";
 import { Coupon } from "../../models";
-import { ViewElement } from "../../BaseElements/ViewElement";
+import { ViewElement } from "../../base-elements/ViewElement";
 
 @customElement("cxl-coupon-details")
 export class CXLCouponDetailsElement extends ViewElement {
