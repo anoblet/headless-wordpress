@@ -2,8 +2,8 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
 import { customElement, html } from "lit-element";
-import { CustomerCollection } from "../../../../models";
-import { GridElement } from "../../BaseElements/GridElement";
+import { CustomerCollection } from "../../models";
+import { GridElement } from "../cxl-dashboard/BaseElements/GridElement";
 import "./cxl-customer-view";
 
 @customElement("cxl-customer-grid")

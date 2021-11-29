@@ -4,11 +4,11 @@ import "@vaadin/vaadin-select";
 import { css, customElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache";
-import { config } from "../../../../config";
-import { Order } from "../../../../models";
-import { navigateExternal } from "../../../../utilities";
-import { ViewElement } from "../../BaseElements/ViewElement";
-import "../Refund/cxl-refund-grid";
+import { config } from "../../config";
+import { Order } from "../../models";
+import { navigateExternal } from "../../utilities";
+import { ViewElement } from "../cxl-dashboard/BaseElements/ViewElement";
+import "../cxl-dashboard/Views/Refund/cxl-refund-grid";
 import "./cxl-order-details";
 
 @customElement("cxl-order-view")

@@ -1,16 +1,16 @@
-import "./components/cxl-dashboard/Views/Customer/cxl-customer-details";
-import "./components/cxl-dashboard/Views/Customer/cxl-customer-grid";
-import "./components/cxl-dashboard/Views/Customer/cxl-customer-view";
+import "./components/customer/cxl-customer-details";
+import "./components/customer/cxl-customer-grid";
+import "./components/customer/cxl-customer-view";
 
 import "./components/cxl-dashboard/Views/knowledge-base/cxl-knowledge-base";
 
 import "./components/cxl-dashboard/Views/Membership/cxl-membership-grid";
 import "./components/cxl-dashboard/Views/Membership/cxl-membership-view";
 
-import "./components/cxl-dashboard/Views/Order/cxl-order-details";
-import "./components/cxl-dashboard/Views/Order/cxl-order-grid";
-import "./components/cxl-dashboard/Views/Order/cxl-order-refund";
-import "./components/cxl-dashboard/Views/Order/cxl-order-view";
+import "./components/order/cxl-order-details";
+import "./components/order/cxl-order-grid";
+import "./components/order/cxl-order-refund";
+import "./components/order/cxl-order-view";
 
 import "./components/cxl-dashboard/Views/Refund/cxl-refund-create";
 import "./components/cxl-dashboard/Views/Refund/cxl-refund-grid";
