@@ -15,7 +15,7 @@
         "save": "git add . && git commit -m \"refactor(headless-wordpress): save\"",
         "service-worker": "node bin/workbox-build.js && rollup -c etc/rollup.service-worker.js && rimraf tmp",
         "server": "wds --app-index public/index.html --open --root-dir public --watch",
-        "start": "npm run build && npm-run-all -p build:watch server",
+        "start": "npm run build:typescript && npm-run-all -p build:watch server",
         "start:production": "npm run build && npm run server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
