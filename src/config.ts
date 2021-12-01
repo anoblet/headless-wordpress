@@ -9,6 +9,6 @@ export const config = {
         consumerSecret: "XX_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     },
     wordpress: {
-        url: "https://shy-dolphin-37.loca.lt",
+        url: "https://spotty-cougar-84.loca.lt",
     },
 };
