@@ -29,8 +29,6 @@ export class CXLCouponDetailsElement extends ViewElement {
     }
 
     render() {
-        if (!(this.item instanceof this._itemType))
-            return html`<span id="loading">Loading...</span>`;
         return html`
             <div id="grid">
                 <label>ID</label>
