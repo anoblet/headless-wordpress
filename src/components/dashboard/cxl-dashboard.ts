@@ -1,3 +1,4 @@
+import "@conversionxl/cxl-lumo-styles";
 import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-app-layout";
 import "@vaadin/vaadin-app-layout/vaadin-drawer-toggle";
@@ -12,8 +13,7 @@ import {
     query,
 } from "lit-element";
 import { routes } from "../../routes";
-import { navigate, navigateExternal } from "../../utilities";
-import "@conversionxl/cxl-lumo-styles";
+import { navigate } from "../../utilities";
 
 @customElement("cxl-dashboard")
 export class CXLDashboardElement extends LitElement {
@@ -57,9 +57,7 @@ export class CXLDashboardElement extends LitElement {
     render() {
         return html`
             <vaadin-app-layout>
-                <vaadin-drawer-toggle
-                    slot="navbar [touch-optimized]"
-                ></vaadin-drawer-toggle>
+                <vaadin-drawer-toggle slot="navbar"></vaadin-drawer-toggle>
                 <span class="space-between" id="navbarContent" slot="navbar">
                     <vaadin-tab>
                         <a href="/">CXL Customer Service</a>
