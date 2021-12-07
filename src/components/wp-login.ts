@@ -19,7 +19,7 @@ export class WPLoginElement extends BaseElement {
             <vaadin-login-overlay
                 description="Please login using your credentials"
             >
-                <h3 slot="title">${config.title}</h3>
+                <h3 slot="title" style="color: #fff">${config.title}</h3>
             </vaadin-login-overlay>
             <vaadin-dialog id="feedbackDialog">
                 <template>Login is being processed...</template>
@@ -54,20 +54,15 @@ export class WPLoginElement extends BaseElement {
     }
 
     async login(event) {
-        // this.feedbackDialog.opened = true;
-
         const formData = new FormData();
         formData.append("username", event.detail.username);
         formData.append("password", event.detail.password);
 
-        const response = await fetch(
-            `${config.wordpress.url}/wp-json/jwt-auth/v1/token`,
-            {
-                headers: { "Bypass-Tunnel-Reminder": "true" },
-                method: "POST",
-                body: formData,
-            }
-        )
+        await fetch(`${config.wordpress.url}/wp-json/jwt-auth/v1/token`, {
+            headers: { "Bypass-Tunnel-Reminder": "true" },
+            method: "POST",
+            body: formData,
+        })
             .then(async (response) => {
                 const { token } = await response.json();
                 localStorage.setItem("token", token);
