@@ -59,7 +59,6 @@ export class WPLoginElement extends BaseElement {
         formData.append("password", event.detail.password);
 
         await fetch(`${config.wordpress.url}/wp-json/jwt-auth/v1/token`, {
-            headers: { "Bypass-Tunnel-Reminder": "true" },
             method: "POST",
             body: formData,
         })
