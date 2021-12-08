@@ -1,5 +1,6 @@
-import { logout, measure } from "../utilities";
+import { logout, measure, notify } from "../utilities";
 import { WooCommerce } from "../WooCommerce";
+import { html } from "lit-html";
 
 export class BaseCollectionModel {
     _itemType;
@@ -31,7 +32,20 @@ export class BaseCollectionModel {
                     .catch((error) => {
                         // Instance host may have changed, so logout and try again
                         if (error.response.status === 403) {
+                            notify({
+                                message: html`
+                                    <span
+                                        style="display: flex; flex: 1; justify-content: center"
+                                    >
+                                        ${error.response.data.message}
+                                    </span>
+                                `,
+                                theme: "error",
+                            });
+
                             logout();
+
+                            throw error;
                         }
                     });
 
