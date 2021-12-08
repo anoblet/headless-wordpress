@@ -10,7 +10,7 @@ export const WooCommerce = ({ version } = { version: "wc/v3" }) => {
             auth: undefined,
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
-                "Bypass-Tunnel-Reminder": true,
+                // "Bypass-Tunnel-Reminder": true,
             },
             withCredentials: false,
         },
