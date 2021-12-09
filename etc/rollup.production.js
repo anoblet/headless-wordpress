@@ -23,7 +23,7 @@ module.exports = {
         json(),
         nodePolyfills(),
         replace({
-            APP_VERSION: `v${version}-${commitHash}`,
+            BUILD_VERSION: `v${version}-${commitHash}`,
         }),
     ],
 };

@@ -1,6 +1,6 @@
 // import { config } from "./config";
 
-console.log("Version: APP_VERSION");
+console.log("Build: BUILD_VERSION");
 
 // document.body.style.setProperty("--lumo-primary-color", config.style.primaryColor);
 // document.body.style.setProperty("--lumo-primary-text-color", config.style.primaryColor);
